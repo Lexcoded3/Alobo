@@ -3509,7 +3509,7 @@ blockquote {
 }
 
 .our-mission-section {
-    padding-top: 100px;
+    padding-top: 40px;
     padding-bottom: 100px;
 }
 
@@ -3816,7 +3816,7 @@ blockquote {
 }
 
 .upcoming-campaign-section {
-    padding-top: 100px;
+    padding-top: 40px;
     padding-bottom: 100px;
 }
 
@@ -4229,7 +4229,7 @@ blockquote {
 }
 
 .blog-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .blog-collection-list {
@@ -4911,7 +4911,7 @@ blockquote {
 }
 
 .total-donation-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .total-donation-section.pt-0px.pb-135px {
@@ -4938,7 +4938,7 @@ blockquote {
 }
 
 .about-candidate-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .about-candidate-wrapper {
@@ -5144,7 +5144,7 @@ blockquote {
 }
 
 .party-member-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .party-member-title-block {
@@ -5259,7 +5259,7 @@ blockquote {
 }
 
 .manifesto-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .manifesto-wrapper-block {
@@ -5393,7 +5393,7 @@ blockquote {
 }
 
 .issues-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .issues-list {
@@ -5470,11 +5470,11 @@ blockquote {
 }
 
 .campaign-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .contact-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .contact-wrapper {
@@ -5584,7 +5584,7 @@ blockquote {
 }
 
 .contact-form-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .contact-form-wrapper {
@@ -5711,7 +5711,7 @@ blockquote {
 }
 
 .volunteer-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .volunteer-wrapper {
@@ -6940,7 +6940,7 @@ blockquote {
 }
 
 .press-conference-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .conference-details-wrapper {
@@ -7279,7 +7279,7 @@ blockquote {
 }
 
 .search-section {
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .search-page-wrapper {
@@ -7490,7 +7490,7 @@ blockquote {
         grid-column-gap: 108px;
     }
     .our-mission-section {
-        padding-top: 120px;
+        padding-top: 50px;
         padding-bottom: 120px;
     }
     .our-mission-wrapper {
@@ -7581,7 +7581,7 @@ blockquote {
         width: 170px;
     }
     .upcoming-campaign-section {
-        padding-top: 120px;
+        padding-top: 50px;
         padding-bottom: 120px;
     }
     .upcoming-campaign-wrapper {
@@ -7655,7 +7655,7 @@ blockquote {
         font-size: 16px;
     }
     .blog-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .blog-top-gap {
         margin-top: 50px;
@@ -7707,7 +7707,7 @@ blockquote {
         margin-bottom: 30px;
     }
     .total-donation-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .total-donation-section.pt-0px.pb-135px {
         padding-bottom: 120px;
@@ -7721,7 +7721,7 @@ blockquote {
         margin-bottom: 50px;
     }
     .about-candidate-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .about-candidate-wrapper {
         grid-column-gap: 100px;
@@ -7774,7 +7774,7 @@ blockquote {
         padding-bottom: 0px;
     }
     .party-member-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .party-member-title-block {
         margin-bottom: 50px;
@@ -7786,7 +7786,7 @@ blockquote {
         margin-top: 60px;
     }
     .manifesto-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .manifesto-tabs {
         margin-bottom: -30px;
@@ -7807,16 +7807,16 @@ blockquote {
         margin-bottom: 25px;
     }
     .issues-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .issues-content-block {
         grid-row-gap: 15px;
     }
     .campaign-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .contact-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .contact-wrapper {
         grid-column-gap: 113px;
@@ -7839,7 +7839,7 @@ blockquote {
         max-width: 247px;
     }
     .contact-form-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .contact-form-wrapper {
         margin-top: 60px;
@@ -7848,7 +7848,7 @@ blockquote {
         min-height: 260px;
     }
     .volunteer-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .volunteer-wrapper {
         grid-column-gap: 65px;
@@ -7924,14 +7924,14 @@ blockquote {
         text-align: center;
     }
     .press-conference-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
     .press-conference-list.press-conference-page {
         grid-column-gap: 140px;
         grid-row-gap: 50px;
     }
     .search-section {
-        padding-top: 120px;
+        padding-top: 50px;
     }
 }
 
