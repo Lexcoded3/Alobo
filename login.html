@@ -5,9 +5,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Login</title>
-    <meta content="Login" property="og:title" />
-    <meta content="Login" property="twitter:title" />
+    <title>Constituent Profile Dashboard — Hon. Joan Alobo</title>
+    <meta content="Constituent Profile Dashboard — Hon. Joan Alobo" property="og:title" />
+    <meta content="Constituent Profile Dashboard — Hon. Joan Alobo" property="twitter:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
     <link href="assets/css/unio-template.webflow.c4cead615.css" rel="stylesheet" type="text/css" />
@@ -62,7 +62,7 @@
                                         </div>
                                         <nav class="nav-dropdown-list shadow-three mobile-shadow-hide w-dropdown-list"><a href="volunteer.html" class="nav-dropdown-link w-dropdown-link">Volunteer</a><a href="party-members.html" class="nav-dropdown-link w-dropdown-link">Party Members</a><a href="manifesto.html" class="nav-dropdown-link w-dropdown-link">Manifesto</a>
                                             <a
-                                                href="register.html" class="nav-dropdown-link w-dropdown-link">Register</a><a href="login.html" aria-current="page" class="nav-dropdown-link w-dropdown-link w--current">Login</a><a href="donation.html" class="nav-dropdown-link w-dropdown-link">Donation</a><a href="press-conference.html"
+                                                href="register.html" class="nav-dropdown-link w-dropdown-link">Register</a><a href="login.html" aria-current="page" class="nav-dropdown-link w-dropdown-link w--current">Profile</a><a href="donation.html" class="nav-dropdown-link w-dropdown-link">Donation</a><a href="press-conference.html"
                                                     class="nav-dropdown-link w-dropdown-link">Press Coference</a><a href="tweets.html" class="nav-dropdown-link w-dropdown-link">Tweets</a></nav>
                                     </div>
                                 </li>
@@ -81,68 +81,150 @@
         <div class="breadcrumb-section wf-section">
             <div class="container w-container">
                 <div class="breadcrumb-wrapper">
-                    <h1 class="breadcrumb-title">Login</h1>
+                    <h1 class="breadcrumb-title">Profile</h1>
                     <div class="breadcrumb-link-block"><a href="index.html" class="breadcrumb-backlink">Home</a>
                         <div class="breadcrunb-slach">/</div>
-                        <div class="current-page-name">Login</div>
+                        <div class="current-page-name">Profile</div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="blog-section wf-section">
             <div class="container w-container">
-                <div class="login-wrapper">
-                    <div class="login-left-side">
-                        <div class="login-top">
-                            <h2 class="login-title">Login to Constituent Portal</h2>
-                            <p data-w-id="286e5635-b3e2-376c-471b-f24645296652" style="opacity:0" class="login-details">Human right is the most important factor for all the peoploe than leaves in the Country and make the most common problems now a days<br/></p>
+                <!-- ===== PROFILE DASHBOARD ===== -->
+                <div style="display:flex;flex-direction:column;gap:40px;padding:20px 0 40px 0;">
+
+                    <!-- Welcome Header Card -->
+                    <div style="display:flex;align-items:center;gap:24px;padding:30px;background:linear-gradient(135deg, #16327a 0%, #1a4b8c 100%);border-radius:16px;color:#fff;flex-wrap:wrap;">
+                        <div style="flex-shrink:0;width:90px;height:90px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,0.3);">
+                            <img src="assets/main.jpg" loading="lazy" alt="Hon. Joan Alobo" style="width:100%;height:100%;object-fit:cover;" />
                         </div>
-                        <!-- ===== LOGIN FORM (COMMENTED OUT - COMING SOON) =====
-                        <div class="login-form-block">
-                            <div class="form-block w-form">
-                                <form id="wf-form-Login-Form" name="wf-form-Login-Form" data-name="Login Form" method="get" class="login-form"><input type="email" class="form-input-field contact-form-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Email" id="Email" required="" /><input type="password" class="form-input-field contact-form-field w-input"
-                                        maxlength="256" name="Password" data-name="Password" placeholder="Password" id="Password-2" required="" />
-                                    <div class="forget-password-block"><label class="w-checkbox form-checkbox login-page"><input type="checkbox" name="Checkbox" id="Checkbox" data-name="Checkbox" required="" class="w-checkbox-input checkbox"/><span class="checkbox-label w-form-label" for="Checkbox">I agree with the</span></label>
-                                        <a
-                                            href="#" class="forget-password register-page">Forget Password</a>
-                                    </div>
-                                    <div class="button-block"><input type="submit" value="Login" data-wait="Please wait..." class="button-primary anotther-button w-button" /><a href="register.html" class="register-link">Register</a></div>
-                                </form>
-                                <div class="w-form-done">
-                                    <div>Thank you! Your submission has been received!</div>
+                        <div style="flex:1;min-width:200px;">
+                            <div style="font-size:12px;text-transform:uppercase;letter-spacing:1.5px;opacity:0.8;margin-bottom:4px;">Constituent Portal</div>
+                            <h2 style="margin:0;font-size:28px;color:#fff;line-height:1.2;">Welcome to Your Dashboard</h2>
+                            <p style="margin:6px 0 0 0;opacity:0.85;font-size:15px;">Hon. Joan Acom Alobo — Woman MP, Soroti City East</p>
+                        </div>
+                        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+                            <div style="text-align:center;padding:10px 16px;background:rgba(255,255,255,0.12);border-radius:10px;">
+                                <div style="font-size:24px;font-weight:800;">12</div>
+                                <div style="font-size:10px;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Wards Served</div>
+                            </div>
+                            <div style="text-align:center;padding:10px 16px;background:rgba(255,255,255,0.12);border-radius:10px;">
+                                <div style="font-size:24px;font-weight:800;">40K+</div>
+                                <div style="font-size:10px;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Constituents</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portal Coming Soon Banner -->
+                    <div style="display:flex;align-items:center;gap:20px;padding:24px 28px;background:#f8f9fb;border:1px solid #e0e4ea;border-radius:12px;flex-wrap:wrap;">
+                        <div style="flex-shrink:0;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#16327a;border-radius:12px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <div style="flex:1;min-width:200px;">
+                            <h4 style="margin:0;font-size:17px;color:#1a1a2e;">Constituent Portal — Coming Soon</h4>
+                            <p style="margin:4px 0 0 0;font-size:14px;color:#666;">We're building a secure portal where you can track constituency projects, submit service requests, and connect directly with your MP's office. Account features including login, case tracking, and community forums will be available soon.</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Grid -->
+                    <div>
+                        <h3 style="margin-bottom:20px;font-size:22px;">Quick Actions</h3>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+                            <!-- Donate -->
+                            <a href="donation.html" style="display:flex;align-items:center;gap:16px;padding:22px;background:#fff;border:1px solid #e8e8e8;border-radius:12px;text-decoration:none;transition:all 0.25s ease;box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                                <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a5cb0,#e70f47);border-radius:12px;flex-shrink:0;">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                                 </div>
-                                <div class="w-form-fail">
-                                    <div>Oops! Something went wrong while submitting the form.</div>
+                                <div>
+                                    <div style="font-weight:700;font-size:16px;color:#1a1a2e;">Support Our Work</div>
+                                    <div style="font-size:13px;color:#888;margin-top:2px;">Make a donation</div>
+                                </div>
+                            </a>
+                            <!-- Volunteer -->
+                            <a href="volunteer.html" style="display:flex;align-items:center;gap:16px;padding:22px;background:#fff;border:1px solid #e8e8e8;border-radius:12px;text-decoration:none;transition:all 0.25s ease;box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                                <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#16327a;border-radius:12px;flex-shrink:0;">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-weight:700;font-size:16px;color:#1a1a2e;">Get Involved</div>
+                                    <div style="font-size:13px;color:#888;margin-top:2px;">Become a volunteer</div>
+                                </div>
+                            </a>
+                            <!-- Contact MP -->
+                            <a href="contact.html" style="display:flex;align-items:center;gap:16px;padding:22px;background:#fff;border:1px solid #e8e8e8;border-radius:12px;text-decoration:none;transition:all 0.25s ease;box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+                                <div style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#1a5cb0;border-radius:12px;flex-shrink:0;">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-weight:700;font-size:16px;color:#1a1a2e;">Contact MP</div>
+                                    <div style="font-size:13px;color:#888;margin-top:2px;">Reach our office</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Info Cards Row -->
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+                        <!-- My MP Card -->
+                        <div style="padding:24px;background:#fff;border:1px solid #e8e8e8;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                            <h4 style="margin-bottom:16px;font-size:18px;display:flex;align-items:center;gap:10px;">
+                                <span style="display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;background:#eef2ff;border-radius:8px;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16327a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </span>
+                                Your MP
+                            </h4>
+                            <div style="display:flex;align-items:center;gap:14px;">
+                                <div style="width:56px;height:56px;border-radius:50%;overflow:hidden;flex-shrink:0;">
+                                    <img src="assets/main.jpg" loading="lazy" alt="Hon. Joan Alobo" style="width:100%;height:100%;object-fit:cover;" />
+                                </div>
+                                <div>
+                                    <div style="font-weight:700;color:#1a1a2e;">Hon. Joan Acom Alobo</div>
+                                    <div style="font-size:13px;color:#666;">Woman MP, Soroti City East</div>
+                                    <div style="margin-top:6px;"><a href="about.html" style="font-size:13px;font-weight:600;color:#16327a;">View Full Profile &rarr;</a></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="other-login-options-text">or Sign in with</div>
-                        <div class="other-login-options"><a title="Login With Facebook" href="#" class="other-login-single-option w-inline-block"><img src="assets/63edabcf6d25e1d523f9ff04_facebbok-icon.svg" loading="lazy" alt="Other Login Single Option Image" class="other-login-single-option-icon"/></a>
-                            <a
-                                title="Login With Google" href="#" class="other-login-single-option w-inline-block"><img src="assets/63edac164891239900dc6bae_google-icon.svg" loading="lazy" alt="Other Login Single Option Image" class="other-login-single-option-icon" /></a><a Title="Login With Twitter"
-                                    href="#" class="other-login-single-option w-inline-block"><img src="assets/63edac33d55a33899ba2d297_twitter.svg" loading="lazy" alt="Other Login Single Option Image" class="other-login-single-option-icon"/></a>
-                                <a
-                                    Title="Login With LinkedIn" href="#" class="other-login-single-option w-inline-block"><img src="assets/63edac27291b03383527bae3_linkedin.svg" loading="lazy" alt="Other Login Single Option Image" class="other-login-single-option-icon" /></a>
+                        <!-- Recent Updates Card -->
+                        <div style="padding:24px;background:#fff;border:1px solid #e8e8e8;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                            <h4 style="margin-bottom:16px;font-size:18px;display:flex;align-items:center;gap:10px;">
+                                <span style="display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;background:#eef2ff;border-radius:8px;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16327a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+                                </span>
+                                Latest Updates
+                            </h4>
+                            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+                                <li style="padding-bottom:10px;border-bottom:1px solid #f0f0f0;font-size:14px;line-height:1.4;"><a href="feed.html" style="color:#1a1a2e;font-weight:500;">Community Health Outreach — 12 Jun 2026</a></li>
+                                <li style="padding-bottom:10px;border-bottom:1px solid #f0f0f0;font-size:14px;line-height:1.4;"><a href="feed.html" style="color:#1a1a2e;font-weight:500;">Youth Skills Workshop — 05 Jul 2026</a></li>
+                                <li style="font-size:14px;line-height:1.4;"><a href="feed.html" style="color:#1a1a2e;font-weight:500;">Swearing in of Alobo — 20 May 2026</a></li>
+                            </ul>
                         </div>
-                        ===== END COMMENTED OUT LOGIN FORM ===== -->
-                        <!-- Coming Soon Placeholder -->
-                        <div class="login-form-block" style="text-align: center; padding: 60px 30px;">
-                            <div style="margin-bottom: 24px;">
-                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1a4b8c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+
+                    <!-- Manifesto Highlights -->
+                    <div>
+                        <h3 style="margin-bottom:20px;font-size:22px;">Our Priorities</h3>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+                            <div style="padding:18px;background:#f8f9fb;border-radius:10px;border-left:3px solid #16327a;">
+                                <div style="font-weight:700;font-size:15px;color:#1a1a2e;margin-bottom:4px;">Healthcare</div>
+                                <div style="font-size:13px;color:#666;">5 new health centres, maternal services</div>
                             </div>
-                            <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 12px; color: #1a1a2e;">Constituent Portal</h3>
-                            <p style="font-size: 16px; color: #666; margin-bottom: 8px; max-width: 400px; margin-left: auto; margin-right: auto;">We're building a secure portal for Soroti City East constituents.</p>
-                            <p style="font-size: 14px; color: #999;">Login &amp; account features coming soon.</p>
+                            <div style="padding:18px;background:#f8f9fb;border-radius:10px;border-left:3px solid #1a5cb0;">
+                                <div style="font-weight:700;font-size:15px;color:#1a1a2e;margin-bottom:4px;">Education</div>
+                                <div style="font-size:13px;color:#666;">10 schools, 500 bursaries</div>
+                            </div>
+                            <div style="padding:18px;background:#f8f9fb;border-radius:10px;border-left:3px solid #e70f47;">
+                                <div style="font-weight:700;font-size:15px;color:#1a1a2e;margin-bottom:4px;">Jobs & Skills</div>
+                                <div style="font-size:13px;color:#666;">2,000 jobs, vocational training</div>
+                            </div>
+                            <div style="padding:18px;background:#f8f9fb;border-radius:10px;border-left:3px solid #16327a;">
+                                <div style="font-weight:700;font-size:15px;color:#1a1a2e;margin-bottom:4px;">Environment</div>
+                                <div style="font-size:13px;color:#666;">1M trees, clean energy</div>
+                            </div>
                         </div>
+                        <a href="manifesto.html" style="display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:#16327a;">Read Full Manifesto &rarr;</a>
                     </div>
-                    <div class="login-right-side">
-                        <div class="banner-block-right">
-                            <div class="image-wrapper animate-in">
-                                <div class="image-overlay"></div><img src="assets/63d8a0cf7bb29b4938ea1ede_our-mission-image.jpg" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 991px) 72vw, (max-width: 1279px) 455.6875px, 573.296875px"
-                                    srcset="assets/63d8a0cf7bb29b4938ea1ede_our-mission-image-p-500.jpg 500w, assets/63d8a0cf7bb29b4938ea1ede_our-mission-image.jpg 637w"
-                                    alt="about-image" class="media-fit-image" /></div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
