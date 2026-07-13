@@ -8923,7 +8923,10 @@ blockquote {
 @media screen and (max-width: 767px) {
     h2 {
         font-size: 24px;
-    }
+    
+    .mobile-fab-whatsapp {
+        display: flex;
+    }}
     h3 {
         font-size: 24px;
     }
@@ -10496,10 +10499,8 @@ blockquote {
 }
 
 .mobile-fab-donate {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    z-index: 1000;
+    position: relative;
+    z-index: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10584,11 +10585,33 @@ blockquote {
     line-height: 1;
 }
 /* === WHATSAPP FAB === */
-.mobile-fab-whatsapp {
+
+/* === FAB CONTAINER === */
+.fab-container {
     position: fixed;
     right: 20px;
-    bottom: 130px;
+    bottom: 90px;
     z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+@media screen and (max-width: 767px) {
+    .fab-container {
+        display: flex;
+    }
+}
+@media screen and (max-width: 479px) {
+    .fab-container {
+        bottom: 80px;
+    }
+}
+
+.mobile-fab-whatsapp {
+    display: none;
+    position: relative;
+    z-index: auto;
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -10630,7 +10653,415 @@ blockquote {
 }
 @media screen and (max-width: 479px) {
     .mobile-fab-whatsapp {
-        bottom: 120px;
+        bottom: 150px;
+    }
+}
+
+
+/* === ACHIEVEMENT COUNTERS === */
+.counters-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #0f2354, #16327a);
+}
+.counters-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+.counter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.counter-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.14);
+}
+.counter-number {
+    font-family: Urbanist, sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+}
+.counter-suffix {
+    display: inline;
+    font-family: Urbanist, sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: #99ccff;
+    line-height: 1;
+    margin-left: -2px;
+}
+.counter-card.has-suffix .counter-number {
+    display: inline;
+}
+.counter-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    line-height: 1.3;
+    font-weight: 500;
+}
+.counter-icon {
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 4px;
+}
+/* === TESTIMONIALS CAROUSEL === */
+.testimonials-section {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background: transparent;
+}
+.testimonials-carousel {
+    max-width: 700px;
+    margin: 40px auto 0;
+    overflow: hidden;
+    position: relative;
+}
+.testimonials-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.testimonial-card {
+    min-width: 100%;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+.testimonial-quote-icon {
+    opacity: 0.6;
+}
+.testimonial-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+    font-style: italic;
+    max-width: 580px;
+}
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+.testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #16327a, #1a5cb0);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+.testimonial-author-info {
+    text-align: left;
+}
+.testimonial-name {
+    font-weight: 700;
+    color: #333;
+    font-size: 15px;
+}
+.testimonial-role {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.3;
+}
+.testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+.testimonial-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #d0d0d0;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.testimonial-dot.active {
+    background: #16327a;
+    transform: scale(1.3);
+}
+.testimonial-dot:hover {
+    background: #99ccff;
+}
+/* Responsive counters */
+@media screen and (max-width: 991px) {
+    .counters-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    .counter-number {
+        font-size: 32px;
+    }
+    .testimonial-card {
+        padding: 30px 30px;
+    }
+    .testimonial-text {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .counters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .counter-card {
+        padding: 16px 8px;
+        gap: 4px;
+    }
+    .counter-number {
+        font-size: 28px;
+    }
+    .counter-label {
+        font-size: 11px;
+    }
+    .testimonial-card {
+        padding: 24px 20px;
+    }
+    .testimonial-text {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 479px) {
+    .counters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .counter-number {
+        font-size: 26px;
+    }
+    .counter-label {
+        font-size: 12px;
+    }
+}
+
+
+/* === DONATION TRACKER === */
+.donation-tracker {
+    margin-bottom: 18px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.donation-tracker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+.donation-tracker-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.donation-tracker-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.donation-tracker-goal {
+    font-family: Urbanist, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+.donation-tracker-percent {
+    font-family: Urbanist, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #99ccff;
+    line-height: 1;
+}
+.donation-tracker-bar {
+    position: relative;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+.donation-tracker-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #99ccff, #66b3ff);
+    border-radius: 10px;
+    width: 0%;
+    position: relative;
+}
+.donation-tracker-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(153, 204, 255, 0.4));
+    border-radius: 0 10px 10px 0;
+}
+.donation-tracker-stats {
+    display: flex;
+    justify-content: space-between;
+}
+.donation-tracker-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+.donation-stat-amount {
+    font-family: Urbanist, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+.donation-stat-label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* === NEWSLETTER CTA === */
+.newsletter-cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0f2354, #16327a);
+}
+.newsletter-cta-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.newsletter-cta-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.newsletter-cta-icon {
+    color: #99ccff;
+}
+.newsletter-cta-title {
+    font-family: Urbanist, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+.newsletter-cta-text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    max-width: 500px;
+}
+.newsletter-cta-form-block {
+    flex: 1;
+    max-width: 420px;
+}
+.newsletter-cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.newsletter-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.newsletter-input {
+    height: 50px;
+    padding: 0 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 15px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+.newsletter-input:focus {
+    border-color: #99ccff;
+    background: rgba(255, 255, 255, 0.15);
+    outline: none;
+}
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.newsletter-submit {
+    height: 50px;
+    padding: 0 30px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #99ccff, #66b3ff);
+    color: #16327a;
+    font-family: Urbanist, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.newsletter-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(153, 204, 255, 0.3);
+}
+.newsletter-disclaimer {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+.newsletter-success {
+    padding: 16px;
+    background: rgba(37, 211, 102, 0.15);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    border-radius: 10px;
+    color: #4ade80;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+    .donation-tracker {
+        padding: 14px 16px;
+    }
+    .donation-tracker-percent {
+        font-size: 24px;
+    }
+    .donation-stat-amount {
+        font-size: 13px;
+    }
+    .newsletter-cta-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .newsletter-cta-text {
+        max-width: 100%;
+    }
+    .newsletter-cta-title {
+        font-size: 26px;
+    }
+    .newsletter-cta-form-block {
+        max-width: 100%;
+        width: 100%;
     }
 }
 
