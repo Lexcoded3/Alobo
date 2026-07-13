@@ -2765,6 +2765,32 @@ blockquote {
 }
 
 
+
+/* === DONATION QUICK-SELECT PILLS === */
+.donation-amount-pill {
+    padding: 10px 18px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-family: Urbanist, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    line-height: 1;
+}
+.donation-amount-pill:hover {
+    border-color: #1a5cb0;
+    color: #1a5cb0;
+    background: #f0f5ff;
+}
+.donation-amount-pill.active {
+    background: #16327a;
+    border-color: #16327a;
+    color: #fff;
+}
 /* === NAV AVATAR === */
 .nav-avatar-item {
     margin-left: 8px;

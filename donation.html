@@ -108,14 +108,15 @@
                             <div class="donation-form-inner w-form">
                                 <form id="email-form" name="email-form" data-name="Email Form" method="get" class="donation-form">
                                     <div class="donation-custum-amount-block">
-                                        <div class="donation-simgle-amount-box"><label class="w-checkbox checkbox-wrapper"><input type="checkbox" id="Checkbox" name="Checkbox" data-name="Checkbox" class="w-checkbox-input checkbox"/><span class="checkbox-lebel w-form-label" for="Checkbox">UGX 500,000</span></label></div>
-                                        <div
-                                            class="donation-simgle-amount-box"><label class="w-checkbox checkbox-wrapper"><input type="checkbox" id="checkbox-4" name="checkbox-4" data-name="Checkbox 4" class="w-checkbox-input checkbox"/><span class="checkbox-label w-form-label" for="checkbox-4">UGX 250,000</span></label></div>
-                                    <div
-                                        class="donation-simgle-amount-box"><label class="w-checkbox checkbox-wrapper"><input type="checkbox" id="checkbox-3" name="checkbox-3" data-name="Checkbox 3" class="w-checkbox-input checkbox"/><span class="checkbox-label w-form-label" for="checkbox-3">UGX 100,000</span></label></div>
-                            <div
-                                class="donation-simgle-amount-box custom-amount-box"><input type="text" class="form-input-field donation-form w-input" maxlength="256" name="field" data-name="Field" placeholder="--Coustom Amount-" id="field" /></div>
-                    </div>
+                                        <div class="donation-amount-pills-wrapper" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px;">
+                                            <button type="button" class="donation-amount-pill active" data-amount="500000" onclick="document.getElementById('field').value='500000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 500,000</button>
+                                            <button type="button" class="donation-amount-pill" data-amount="250000" onclick="document.getElementById('field').value='250000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 250,000</button>
+                                            <button type="button" class="donation-amount-pill" data-amount="100000" onclick="document.getElementById('field').value='100000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 100,000</button>
+                                            <button type="button" class="donation-amount-pill" data-amount="50000" onclick="document.getElementById('field').value='50000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 50,000</button>
+                                            <button type="button" class="donation-amount-pill" data-amount="20000" onclick="document.getElementById('field').value='20000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 20,000</button>
+                                        </div>
+                                        <div class="donation-simgle-amount-box custom-amount-box"><input type="text" class="form-input-field donation-form w-input" maxlength="256" name="field" data-name="Field" placeholder="Or enter custom amount" id="field" /></div>
+                                    </div>
                     <div class="regular-donation-block">
                         <div class="donation-details-text">Would You Like To Make Regular Donations?</div>
                         <div class="regular-donation-block-wrapper">
