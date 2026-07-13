@@ -2675,14 +2675,14 @@ blockquote {
     position: relative;
     overflow: hidden;
     background-color: #16327a;
-    background-image: url("../slider-bg1.png");
+    background-image: url("../slider-bg1.jpg");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .slider-section.slider-two {
-    background-image: url("../slider-bg1.png");
+    background-image: url("../slider-bg1.jpg");
     background-position: 50% 50%;
     background-size: cover;
 }
@@ -3164,7 +3164,7 @@ blockquote {
 .feature-left-block.home-two {
     padding-right: 20px;
     padding-left: 20px;
-    background-image: url("../63db909a07ad2090ddce4cbf_2.png");
+    background-image: url("../63db909a07ad2090ddce4cbf_2.jpg");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -4423,7 +4423,7 @@ blockquote {
 
 .footer {
     background-color: #16327a;
-    background-image: url("../63db555e3a20fd11c5b83ff0_footer-bg.png");
+    background-image: url("../63db8a993a20fd7b42bbafdd_Slider-bg-2.jpg");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -8077,7 +8077,7 @@ blockquote {
     }
     .feature-left-block {
         max-width: 495px;
-        background-image: url("../63db909a07ad2090ddce4cbf_2.png");
+        background-image: url("../63db909a07ad2090ddce4cbf_2.jpg");
         background-position: 50% 50%;
         background-size: cover;
         background-repeat: no-repeat;
