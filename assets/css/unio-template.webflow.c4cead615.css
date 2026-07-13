@@ -2764,6 +2764,69 @@ blockquote {
     color: #1a5cb0;
 }
 
+
+/* === NAV AVATAR === */
+.nav-avatar-item {
+    margin-left: 8px;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+}
+.nav-avatar-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.nav-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+.nav-avatar:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+.nav-avatar-mobile {
+    display: none;
+    align-items: center;
+    align-self: center;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: 12px;
+}
+.nav-avatar-mobile-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 0.25s ease;
+}
+.nav-avatar-mobile-circle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+@media screen and (max-width: 991px) {
+    .nav-avatar-item {
+        display: none;
+    }
+    .nav-avatar-mobile {
+        display: flex;
+    }
+}
 .button-primary.anotther-button {
     padding-right: 29px;
     padding-left: 29px;
@@ -8345,6 +8408,7 @@ blockquote {
         border-radius: 8px;
         background-color: #003bd1;
         color: #fff;
+        order: 2;
     }
     .menu-button.w--open {
         border-radius: 8px;
