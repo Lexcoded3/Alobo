@@ -8940,6 +8940,7 @@ blockquote {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
+        padding-top: 120px !important;
         padding-bottom: 0px;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
