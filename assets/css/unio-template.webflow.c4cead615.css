@@ -3239,7 +3239,7 @@ blockquote {
 }
 
 .about-section {
-    padding-top: 100px;
+    padding-top: 40px;
     padding-bottom: 100px;
 }
 
@@ -5089,7 +5089,7 @@ blockquote {
     display: -ms-flexbox;
     display: flex;
     padding-top: 293px;
-    padding-bottom: 247px;
+    padding-bottom: 60px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -7483,7 +7483,7 @@ blockquote {
         max-width: 100%;
     }
     .about-section {
-        padding-top: 120px;
+        padding-top: 50px;
         padding-bottom: 120px;
     }
     .about-wrapper {
@@ -7765,7 +7765,7 @@ blockquote {
     }
     .breadcrumb-wrapper {
         padding-top: 301px;
-        padding-bottom: 254px;
+        padding-bottom: 60px;
     }
     .pt-0px {
         padding-top: 0px;
