@@ -8941,7 +8941,7 @@ blockquote {
         display: -ms-flexbox;
         display: flex;
         padding-top: 120px !important;
-        padding-bottom: 0px;
+        padding-bottom: 0px !important;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
@@ -8967,10 +8967,16 @@ blockquote {
         padding-left: 20px;
     }
     .slider-image {
-        position: static;
-        max-width: 80%;
+        position: relative;
+        width: 95%;
+        max-width: 100%;
         margin-right: auto;
         margin-left: auto;
+        height: 100% !important;
+        max-height: 600px !important;
+        flex-grow: 1;
+        object-fit: cover;
+        object-position: bottom;
     }
     .navbar-logo-left-container {
         max-width: 100%;
