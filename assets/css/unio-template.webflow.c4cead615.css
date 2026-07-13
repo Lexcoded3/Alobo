@@ -2752,9 +2752,11 @@ blockquote {
 }
 
 .button-primary.donate-button {
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 18px;
     font-weight: 700;
+    transition: all 0.3s ease;
 }
 
 .button-primary.donate-button.slider-two {
@@ -8865,7 +8867,9 @@ blockquote {
         font-size: 16px;
     }
     .button-primary.donate-button {
-        font-size: 18px;
+        font-size: 16px;
+        padding: 8px 18px;
+        border-radius: 50px;
     }
     .button-primary.anotther-button {
         padding-right: 20px;
