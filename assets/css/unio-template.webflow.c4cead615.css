@@ -11882,7 +11882,6 @@ blockquote {
 /* END FEED PAGE STYLES */
 /* ============ BLOG PAGE STYLES ============ */
 
-/* Blog Hero Section */
 .blog-hero-section {
     position: relative;
     padding: 200px 0 100px;
@@ -11910,6 +11909,7 @@ blockquote {
     position: relative;
     z-index: 2;
     text-align: center;
+    padding: 0 20px;
 }
 .blog-hero-title {
     color: #fff;
@@ -11955,13 +11955,11 @@ blockquote {
     letter-spacing: 0.5px;
 }
 
-/* Blog Content Section */
 .blog-content-section {
     padding: 30px 0 60px;
     background: #f8f9fc;
 }
 
-/* Blog Featured Post */
 .blog-featured-post {
     background: #fff;
     border-radius: 16px;
@@ -12027,7 +12025,6 @@ blockquote {
     flex-wrap: wrap;
 }
 
-/* Blog Grid */
 .blog-grid {
     display: -ms-grid;
     display: grid;
@@ -12035,7 +12032,6 @@ blockquote {
     gap: 24px;
 }
 
-/* Blog Card */
 .blog-card {
     background: #fff;
     border-radius: 14px;
@@ -12204,3 +12200,39 @@ blockquote {
     padding-top: 14px;
     border-top: 1px solid #f0f2f5;
 }
+
+/* ============ BLOG RESPONSIVE ============ */
+@media (max-width: 991px) {
+    .blog-grid { grid-template-columns: 1fr 1fr; }
+    .blog-hero-title { font-size: 36px; }
+    .blog-featured-post { padding: 28px 24px; }
+    .blog-featured-title { font-size: 22px; }
+}
+@media (max-width: 767px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-hero-title { font-size: 28px; }
+    .blog-hero-section { padding: 140px 0 60px; min-height: auto; }
+    .blog-hero-stats { gap: 20px; }
+    .blog-hero-wrapper { padding: 0 15px; }
+    .blog-featured-post { padding: 22px 18px; border-left-width: 4px; }
+    .blog-featured-title { font-size: 20px; }
+    .blog-featured-excerpt { font-size: 14px; }
+    .blog-card-title { font-size: 16px; }
+    .blog-card-excerpt { font-size: 13px; }
+    .blog-card-image { height: 180px; }
+    .blog-hero-stat-num { font-size: 24px; }
+    .blog-content-section { padding-bottom: 80px; }
+}
+@media (max-width: 479px) {
+    .blog-hero-title { font-size: 24px; }
+    .blog-hero-subtitle { font-size: 15px; }
+    .blog-hero-stat-num { font-size: 20px; }
+    .blog-hero-stat-label { font-size: 11px; }
+    .blog-hero-stats { gap: 16px; }
+    .blog-card-image { height: 160px; }
+    .blog-card-body { padding: 14px; }
+    .blog-card-actions { padding-top: 10px; }
+    .blog-featured-post { padding: 16px 14px; margin-bottom: 24px; }
+}
+
+/* END BLOG PAGE STYLES */
