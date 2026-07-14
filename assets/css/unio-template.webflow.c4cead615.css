@@ -11325,7 +11325,7 @@ blockquote {
 /* Feed Hero Section */
 .feed-hero-section {
     position: relative;
-    padding: 100px 0;
+    padding: 200px 0 100px;
     background: linear-gradient(135deg, #0a1a3f 0%, #16327a 50%, #1e4a8a 100%);
     overflow: hidden;
     min-height: 380px;
@@ -12508,7 +12508,7 @@ blockquote {
         grid-template-columns: 1fr;
     }
     .feed-hero-title { font-size: 28px; }
-    .feed-hero-section { padding: 60px 0; min-height: auto; }
+    .feed-hero-section { padding: 140px 0 60px; min-height: auto; }
     .feed-hero-stats { gap: 20px; }
     .feed-toolbar {
         -webkit-box-orient: vertical;
