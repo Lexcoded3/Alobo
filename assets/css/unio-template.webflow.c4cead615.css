@@ -3059,6 +3059,12 @@ blockquote {
     border-top: 1px solid hsla(0, 0%, 100%, 0.3);
 }
 
+.logo-image {
+    max-height: 50px;
+    width: auto;
+    height: auto;
+}
+
 .nav-menu-two {
     display: -webkit-box;
     display: -webkit-flex;
@@ -4097,6 +4103,7 @@ blockquote {
 
 .campaign-donation-thumb {
     position: relative;
+    min-height: 500px;
 }
 
 .campaign-donation-content {
@@ -4448,8 +4455,8 @@ blockquote {
     overflow: hidden;
     max-width: 960px;
     grid-auto-columns: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto;
@@ -7575,14 +7582,14 @@ blockquote {
     }
     .about-section {
         padding-top: 50px;
-        padding-bottom: 120px;
+        padding-bottom: 80px;
     }
     .about-wrapper {
         grid-column-gap: 108px;
     }
     .our-mission-section {
         padding-top: 50px;
-        padding-bottom: 120px;
+        padding-bottom: 80px;
     }
     .our-mission-wrapper {
         -webkit-box-orient: horizontal;
@@ -7673,7 +7680,7 @@ blockquote {
     }
     .upcoming-campaign-section {
         padding-top: 50px;
-        padding-bottom: 120px;
+        padding-bottom: 80px;
     }
     .upcoming-campaign-wrapper {
         -webkit-box-align: center;
@@ -7691,7 +7698,7 @@ blockquote {
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
-        grid-row-gap: 0px;
+        grid-row-gap: 6px;
     }
     .upcoming-campaign-single-content.campaign-page {
         -webkit-box-orient: vertical;
@@ -7801,7 +7808,7 @@ blockquote {
         padding-top: 50px;
     }
     .total-donation-section.pt-0px.pb-135px {
-        padding-bottom: 120px;
+        padding-bottom: 80px;
     }
     .total-donation-amount {
         margin-top: 35px;
@@ -8215,7 +8222,7 @@ blockquote {
         display: -ms-flexbox;
         display: flex;
         padding-top: 120px;
-        padding-bottom: 120px;
+        padding-bottom: 80px;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
@@ -9487,8 +9494,8 @@ blockquote {
         margin-top: 20px;
     }
     .footer-content-block {
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+        grid-column-gap: 6px;
+        grid-row-gap: 6px;
     }
     .footer-title {
         margin-bottom: 20px;
@@ -10474,7 +10481,7 @@ blockquote {
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     -webkit-user-select: none;
-    gap: 4px;
+    gap: 6px;
 }
 
 .mobile-tab-item:active {
@@ -10554,7 +10561,7 @@ blockquote {
 .video-card {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
 }
 .video-wrapper {
     position: relative;
@@ -10595,7 +10602,7 @@ blockquote {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
 }
 @media screen and (max-width: 767px) {
     .fab-container {
@@ -10612,14 +10619,15 @@ blockquote {
     display: none;
     position: relative;
     z-index: auto;
-    width: 56px;
-    height: 56px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: #25D366;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 4px rgba(255,255,255,0.95);
     display: none;
     align-items: center;
     justify-content: center;
+    margin-top: -40px;
     transition: transform 0.2s ease;
     color: #fff;
 }
@@ -10630,8 +10638,8 @@ blockquote {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
 }
 .mobile-fab-whatsapp .mobile-fab-label {
     display: none;
@@ -10750,7 +10758,7 @@ blockquote {
 .testimonial-author {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
     margin-top: 8px;
 }
 .testimonial-avatar {
@@ -10821,11 +10829,11 @@ blockquote {
 @media screen and (max-width: 767px) {
     .counters-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 6px;
     }
     .counter-card {
         padding: 16px 8px;
-        gap: 4px;
+        gap: 6px;
     }
     .counter-number {
         font-size: 28px;
@@ -10980,7 +10988,7 @@ blockquote {
 .newsletter-cta-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
 }
 .newsletter-input-group {
     display: flex;
@@ -11121,3 +11129,194 @@ blockquote {
 }
 
 .w-webflow-badge { display: none !important; }
+
+
+
+/* === DAYS IN OFFICE COUNTER === */
+.daysin-section {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #1a3d8f, #16327a);
+    position: relative;
+    overflow: hidden;
+}
+.daysin-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(153, 204, 255, 0.05) 0%, transparent 60%);
+    animation: countdownGlow 8s ease-in-out infinite alternate;
+}
+@keyframes countdownGlow {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(5%, 5%); }
+}
+.daysin-wrapper {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+.daysin-subtitle {
+    font-family: Urbanist, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+.daysin-title {
+    font-family: Urbanist, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+.daysin-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+.daysin-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.daysin-item {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px 22px;
+    min-width: 100px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.daysin-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+.daysin-number {
+    font-family: Urbanist, sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    display: block;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #fff, #99ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.daysin-label {
+    font-family: Urbanist, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+}
+.daysin-separator {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.25);
+    padding-top: 10px;
+}
+.daysin-event-info {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.daysin-event-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+}
+.daysin-event-badge svg {
+    flex-shrink: 0;
+}
+@media screen and (max-width: 767px) {
+    .daysin-title { font-size: 26px; }
+    .daysin-grid { gap: 12px; }
+    .daysin-item { min-width: 72px; padding: 14px 12px; }
+    .daysin-number { font-size: 32px; }
+    .daysin-label { font-size: 11px; letter-spacing: 1px; }
+    .daysin-separator { font-size: 28px; padding-top: 6px; }
+    .daysin-event-info { gap: 12px; }
+    .daysin-event-badge { font-size: 12px; padding: 8px 14px; }
+}
+@media screen and (max-width: 479px) {
+    .daysin-section { padding: 35px 0; }
+    .daysin-title { font-size: 22px; }
+    .daysin-item { min-width: 64px; padding: 10px 8px; border-radius: 12px; }
+    .daysin-number { font-size: 26px; }
+    .daysin-label { font-size: 10px; letter-spacing: 0.5px; }
+    .daysin-separator { display: none; }
+}
+
+/* === BACK TO TOP BUTTON === */
+.back-to-top-btn {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #16327a, #1a5cb0);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(22, 50, 122, 0.4);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(22, 50, 122, 0.6);
+    background: linear-gradient(135deg, #1a5cb0, #16327a);
+}
+.back-to-top-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+.back-to-top-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.3s ease;
+}
+.back-to-top-btn:hover svg {
+    transform: translateY(-2px);
+}
+@media screen and (max-width: 479px) {
+    .back-to-top-btn {
+        width: 40px;
+        height: 40px;
+    }
+    .back-to-top-btn svg { width: 18px; height: 18px; }
+}
