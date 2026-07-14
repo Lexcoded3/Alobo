@@ -84,215 +84,428 @@
                 </div>
             </div>
         </div>
-        <div class="breadcrumb-section">
+        
+        <!-- ===== FEED HERO ===== -->
+        <section class="feed-hero-section">
             <div class="container w-container">
-                <div class="breadcrumb-wrapper">
-                    <h1 class="breadcrumb-title">Feed</h1>
-                    <div class="breadcrumb-link-block"><a href="index.html" class="breadcrumb-backlink">Home</a>
-                        <div class="breadcrunb-slach">/</div>
-                        <div class="current-page-name">Feed</div>
+                <div class="feed-hero-wrapper">
+                    <h1 class="feed-hero-title">News & Updates</h1>
+                    <p class="feed-hero-subtitle">Staying informed about what's happening across Soroti City East — constituency visits, parliamentary interventions, community events, and more.</p>
+                    <div class="feed-hero-stats">
+                        <div class="feed-hero-stat">
+                            <span class="feed-hero-stat-num">50+</span>
+                            <span class="feed-hero-stat-label">Updates</span>
+                        </div>
+                        <div class="feed-hero-stat">
+                            <span class="feed-hero-stat-num">12</span>
+                            <span class="feed-hero-stat-label">Events</span>
+                        </div>
+                        <div class="feed-hero-stat">
+                            <span class="feed-hero-stat-num">5k+</span>
+                            <span class="feed-hero-stat-label">Followers</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="campaign-section">
+        </section>
+
+        <!-- ===== FEED CONTENT ===== -->
+        <div class="feed-content-section">
             <div class="container w-container">
-                <div class="campaign-list-wrapper w-dyn-list">
-                    <div role="list" class="campaign-list campaign-page w-dyn-items">
-                        <div role="listitem" class="campaign-item w-dyn-item">
-                            <div class="upcoming-campaign-single-content campaign-page">
-                                <div class="upcoming-campaign-thumbnail-block campaign-page"><a href="/campaign/human-rights-campaign" class="campaign-thumb-link-block w-inline-block"><img alt="Upcoming Campaign Thumb Image" loading="lazy" src="assets/63da01e026c7fb038c6931d9_1.jpg" class="upcoming-campaign-thumbnail-image"/></a></div>
-                                <div
-                                    class="upcoming-campaign-single-info-block campaign-page">
-                                    <div class="campaign-date-title-block campaign-page">
-                                        <div class="campaign-date-block">
-                                            <div class="campaign-date">15 Feb</div>
-                                        </div>
-                                        <div class="campaign-title-venue-block">
-                                            <a href="/campaign/human-rights-campaign" class="campaign-title-link-block w-inline-block">
-                                                <h4 class="campaign-title">Human rights Campaign</h4>
-                                            </a>
-                                            <div class="campaign-venue-block">
-                                                <div class="campaign-venue-text">Venue:</div>
-                                                <div class="campaign-venue-name">Molex Square, New York</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="campaign-summary">To make sure all Citizen rights, you have to work together better country our for human rights</p>
-                                    <div class="campaign-time-block">
-                                        <div class="campaign-time-text">Time:</div>
-                                        <div class="campaign-time">2pm - 5pm</div>
-                                    </div>
-                            </div>
-                        </div>
+
+                <!-- Search + Filter Row -->
+                <div class="feed-toolbar">
+                    <div class="feed-search-wrapper">
+                        <svg class="feed-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" class="feed-search-input" id="feedSearch" placeholder="Search updates..." />
                     </div>
-                    <div role="listitem" class="campaign-item w-dyn-item">
-                        <div class="upcoming-campaign-single-content campaign-page">
-                            <div class="upcoming-campaign-thumbnail-block campaign-page"><a href="/campaign/environmental-protection" class="campaign-thumb-link-block w-inline-block"><img alt="Upcoming Campaign Thumb Image" loading="lazy" src="assets/63d9fdcb9e0ef02517df50a6_2.jpg" class="upcoming-campaign-thumbnail-image"/></a></div>
-                            <div
-                                class="upcoming-campaign-single-info-block campaign-page">
-                                <div class="campaign-date-title-block campaign-page">
-                                    <div class="campaign-date-block">
-                                        <div class="campaign-date">15 Feb</div>
-                                    </div>
-                                    <div class="campaign-title-venue-block">
-                                        <a href="/campaign/environmental-protection" class="campaign-title-link-block w-inline-block">
-                                            <h4 class="campaign-title">Environmental Protection</h4>
-                                        </a>
-                                        <div class="campaign-venue-block">
-                                            <div class="campaign-venue-text">Venue:</div>
-                                            <div class="campaign-venue-name">Molex Square, New York</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="campaign-summary">To make sure all Citizen rights, you have to work together better country our for human rights</p>
-                                <div class="campaign-time-block">
-                                    <div class="campaign-time-text">Time:</div>
-                                    <div class="campaign-time">2pm - 5pm</div>
-                                </div>
-                        </div>
+                    <div class="feed-filter-tabs" id="feedFilterTabs">
+                        <button class="feed-filter-tab active" data-filter="all">All</button>
+                        <button class="feed-filter-tab" data-filter="events">Events</button>
+                        <button class="feed-filter-tab" data-filter="updates">Updates</button>
+                        <button class="feed-filter-tab" data-filter="press">Press Releases</button>
                     </div>
                 </div>
-                <div role="listitem" class="campaign-item w-dyn-item">
-                    <div class="upcoming-campaign-single-content campaign-page">
-                        <div class="upcoming-campaign-thumbnail-block campaign-page"><a href="/campaign/protect-political-violence" class="campaign-thumb-link-block w-inline-block"><img alt="Upcoming Campaign Thumb Image" loading="lazy" src="assets/63da01af561197b67ba7c31f_3.jpg" class="upcoming-campaign-thumbnail-image"/></a></div>
-                        <div
-                            class="upcoming-campaign-single-info-block campaign-page">
-                            <div class="campaign-date-title-block campaign-page">
-                                <div class="campaign-date-block">
-                                    <div class="campaign-date">15 Feb</div>
-                                </div>
-                                <div class="campaign-title-venue-block">
-                                    <a href="/campaign/protect-political-violence" class="campaign-title-link-block w-inline-block">
-                                        <h4 class="campaign-title">Protect Political Violence</h4>
-                                    </a>
-                                    <div class="campaign-venue-block">
-                                        <div class="campaign-venue-text">Venue:</div>
-                                        <div class="campaign-venue-name">Molex Square, New York</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="campaign-summary">To make sure all Citizen rights, you have to work together better country our for human rights</p>
-                            <div class="campaign-time-block">
-                                <div class="campaign-time-text">Time:</div>
-                                <div class="campaign-time">2pm - 5pm</div>
-                            </div>
+
+                <!-- Featured Pinned Post -->
+                <div class="feed-featured-post" data-category="events">
+                    <div class="feed-featured-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        Featured
                     </div>
+                    <h3 class="feed-featured-title">Swearing in of Hon. Joan Alobo as Woman MP, Soroti City East</h3>
+                    <p class="feed-featured-excerpt">Hon. Joan Acom Alobo was officially sworn in as the Woman Member of Parliament for Soroti City East at the Parliament of Uganda in Kampala. In her inaugural remarks, she pledged to champion healthcare access, quality education, youth employment, and women's economic empowerment for every family across the constituency.</p>
+                    <div class="feed-featured-meta">
+                        <span class="feed-meta-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            May 20, 2026
+                        </span>
+                        <span class="feed-meta-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            3.2K views
+                        </span>
+                        <span class="feed-meta-item feed-read-time">4 min read</span>
+                    </div>
+                    <button class="feed-share-btn" onclick="sharePost('Swearing in of Hon. Joan Alobo as Woman MP, Soroti City East', 'https://joanalobo.ug/feed')" title="Share">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        Share
+                    </button>
                 </div>
+
+                <!-- Feed Grid -->
+                <div class="feed-grid" id="feedGrid">
+
+                    <!-- Card 1: Health Outreach -->
+                    <article class="feed-card" data-category="events">
+                        <div class="feed-card-image">
+                            <img src="assets/63da01e026c7fb038c6931d9_1.jpg" alt="Community Health Outreach" loading="lazy" />
+                            <span class="feed-card-badge">Event</span>
+                        </div>
+                        <div class="feed-card-body">
+                            <h4 class="feed-card-title">Community Health Outreach at Soroti Regional Referral Hospital</h4>
+                            <p class="feed-card-excerpt">Free medical checkups, maternal health services, and health education for over 500 families across Soroti City East constituency. Thanks to all health workers who volunteered.</p>
+                            <div class="feed-card-meta">
+                                <span class="feed-meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    June 12, 2026
+                                </span>
+                                <span class="feed-meta-item feed-read-time">3 min read</span>
+                            </div>
+                            <div class="feed-card-actions">
+                                <a href="#" class="feed-read-more">Read more →</a>
+                                <button class="feed-share-btn" onclick="sharePost('Community Health Outreach at Soroti Regional Referral Hospital', 'https://joanalobo.ug/feed')" title="Share">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: Youth Skills -->
+                    <article class="feed-card" data-category="updates">
+                        <div class="feed-card-image">
+                            <img src="assets/63d9fdcb9e0ef02517df50a6_2.jpg" alt="Youth Skills Workshop" loading="lazy" />
+                            <span class="feed-card-badge badge-update">Update</span>
+                        </div>
+                        <div class="feed-card-body">
+                            <h4 class="feed-card-title">Youth Skills Workshop Empowers 200+ Young People in Soroti City</h4>
+                            <p class="feed-card-excerpt">Hands-on training in tailoring, ICT, and entrepreneurship — empowering the next generation with practical skills for self-reliance. Certificates awarded to all participants.</p>
+                            <div class="feed-card-meta">
+                                <span class="feed-meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    July 5, 2026
+                                </span>
+                                <span class="feed-meta-item feed-read-time">5 min read</span>
+                            </div>
+                            <div class="feed-card-actions">
+                                <a href="#" class="feed-read-more">Read more →</a>
+                                <button class="feed-share-btn" onclick="sharePost('Youth Skills Workshop Empowers 200+ Young People', 'https://joanalobo.ug/feed')" title="Share">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: Bursary Programme -->
+                    <article class="feed-card" data-category="press">
+                        <div class="feed-card-image">
+                            <img src="assets/63da01af561197b67ba7c31f_3.jpg" alt="Bursary Programme Launch" loading="lazy" />
+                            <span class="feed-card-badge badge-press">Press Release</span>
+                        </div>
+                        <div class="feed-card-body">
+                            <h4 class="feed-card-title">Hon. Joan Alobo Launches 2026 Bursary Programme for Needy Students</h4>
+                            <p class="feed-card-excerpt">Over 500 bursaries awarded to students from vulnerable families across all wards in Soroti City East. The programme prioritizes girls' education and students pursuing STEM courses.</p>
+                            <div class="feed-card-meta">
+                                <span class="feed-meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    June 28, 2026
+                                </span>
+                                <span class="feed-meta-item feed-read-time">6 min read</span>
+                            </div>
+                            <div class="feed-card-actions">
+                                <a href="#" class="feed-read-more">Read more →</a>
+                                <button class="feed-share-btn" onclick="sharePost('Hon. Joan Alobo Launches 2026 Bursary Programme', 'https://joanalobo.ug/feed')" title="Share">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4: Road Infrastructure -->
+                    <article class="feed-card" data-category="updates">
+                        <div class="feed-card-image">
+                            <img src="assets/63da01964995661cc7377b42_4.jpg" alt="Road Infrastructure" loading="lazy" />
+                            <span class="feed-card-badge badge-update">Update</span>
+                        </div>
+                        <div class="feed-card-body">
+                            <h4 class="feed-card-title">Construction of Pamba-Gweri Road Begins After Parliamentary Advocacy</h4>
+                            <p class="feed-card-excerpt">Following months of advocacy by Hon. Joan Alobo, construction has commenced on the long-awaited Pamba-Gweri road, connecting thousands of farmers to markets in Soroti City.</p>
+                            <div class="feed-card-meta">
+                                <span class="feed-meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    June 20, 2026
+                                </span>
+                                <span class="feed-meta-item feed-read-time">4 min read</span>
+                            </div>
+                            <div class="feed-card-actions">
+                                <a href="#" class="feed-read-more">Read more →</a>
+                                <button class="feed-share-btn" onclick="sharePost('Construction of Pamba-Gweri Road Begins', 'https://joanalobo.ug/feed')" title="Share">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5: Women's Empowerment -->
+                    <article class="feed-card" data-category="events">
+                        <div class="feed-card-image">
+                            <img src="assets/63da017f4207255d8e2f7bf0_5.jpg" alt="Women's Empowerment" loading="lazy" />
+                            <span class="feed-card-badge">Event</span>
+                        </div>
+                        <div class="feed-card-body">
+                            <h4 class="feed-card-title">Women's Economic Empowerment Forum Held in Soroti City East</h4>
+                            <p class="feed-card-excerpt">Over 300 women entrepreneurs gathered for training on financial literacy, business registration, and access to microfinance. Hon. Alobo announced a UGX 100M revolving fund for women-led businesses.</p>
+                            <div class="feed-card-meta">
+                                <span class="feed-meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    June 15, 2026
+                                </span>
+                                <span class="feed-meta-item feed-read-time">5 min read</span>
+                            </div>
+                            <div class="feed-card-actions">
+                                <a href="#" class="feed-read-more">Read more →</a>
+                                <button class="feed-share-btn" onclick="sharePost('Women Economic Empowerment Forum Held in Soroti City East', 'https://joanalobo.ug/feed')" title="Share">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6: Tree Planting -->
+                    <article class="feed-card" data-category="updates">
+                        <div class="feed-card-image">
+                            <img src="assets/63da0161de0a10fcb43fbf90_6.jpg" alt="Tree Planting" loading="lazy" />
+                            <span class="feed-card-badge badge-update">Update</span>
+                        </div>
+                        <div class="feed-card-body">
+                            <h4 class="feed-card-title">1 Million Trees Campaign: Hon. Alobo Leads Community Planting Drive</h4>
+                            <p class="feed-card-excerpt">As part of the Teso re-greening initiative, Hon. Joan Alobo joined community members to plant over 10,000 tree seedlings in Arapai and Gweri sub-counties this week alone.</p>
+                            <div class="feed-card-meta">
+                                <span class="feed-meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    June 8, 2026
+                                </span>
+                                <span class="feed-meta-item feed-read-time">3 min read</span>
+                            </div>
+                            <div class="feed-card-actions">
+                                <a href="#" class="feed-read-more">Read more →</a>
+                                <button class="feed-share-btn" onclick="sharePost('1 Million Trees Campaign - Community Planting Drive', 'https://joanalobo.ug/feed')" title="Share">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 7: Parliamentary Speech -->
+                    <article class="feed-card" data-category="press">
+                        <div class="feed-card-image">
+                            <img src="assets/63da013e9128da24f65b161d_7.jpg" alt="Parliamentary Speech" loading="lazy" />
+                            <span class="feed-card-badge badge-press">Press Release</span>
+                        </div>
+                        <div class="feed-card-body">
+                            <h4 class="feed-card-title">Hon. Joan Alobo Delivers Maiden Speech in Parliament on Healthcare Priorities</h4>
+                            <p class="feed-card-excerpt">In her maiden parliamentary speech, Hon. Alobo called for increased funding for rural health centres in Teso, improved maternal health services, and better working conditions for health workers.</p>
+                            <div class="feed-card-meta">
+                                <span class="feed-meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    June 3, 2026
+                                </span>
+                                <span class="feed-meta-item feed-read-time">7 min read</span>
+                            </div>
+                            <div class="feed-card-actions">
+                                <a href="#" class="feed-read-more">Read more →</a>
+                                <button class="feed-share-btn" onclick="sharePost('Hon. Joan Alobo Maiden Speech in Parliament on Healthcare', 'https://joanalobo.ug/feed')" title="Share">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Load More -->
+                <div class="feed-load-more-wrapper" id="feedLoadMore">
+                    <button class="feed-load-more-btn" id="feedLoadMoreBtn">
+                        Load More Updates
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <span class="feed-load-more-count" id="feedLoadMoreCount">Showing 5 of 7 updates</span>
+                </div>
+
             </div>
-            <div role="listitem" class="campaign-item w-dyn-item">
-                <div class="upcoming-campaign-single-content campaign-page">
-                    <div class="upcoming-campaign-thumbnail-block campaign-page"><a href="/campaign/campaign-for-education" class="campaign-thumb-link-block w-inline-block"><img alt="Upcoming Campaign Thumb Image" loading="lazy" src="assets/63da01964995661cc7377b42_4.jpg" class="upcoming-campaign-thumbnail-image"/></a></div>
-                    <div
-                        class="upcoming-campaign-single-info-block campaign-page">
-                        <div class="campaign-date-title-block campaign-page">
-                            <div class="campaign-date-block">
-                                <div class="campaign-date">15 Feb</div>
-                            </div>
-                            <div class="campaign-title-venue-block">
-                                <a href="/campaign/campaign-for-education" class="campaign-title-link-block w-inline-block">
-                                    <h4 class="campaign-title">Campaign for Education</h4>
-                                </a>
-                                <div class="campaign-venue-block">
-                                    <div class="campaign-venue-text">Venue:</div>
-                                    <div class="campaign-venue-name">Molex Square, New York</div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="campaign-summary">To make sure all Citizen rights, you have to work together better country our for human rights</p>
-                        <div class="campaign-time-block">
-                            <div class="campaign-time-text">Time:</div>
-                            <div class="campaign-time">2pm - 5pm</div>
-                        </div>
-                </div>
-            </div>
         </div>
-        <div role="listitem" class="campaign-item w-dyn-item">
-            <div class="upcoming-campaign-single-content campaign-page">
-                <div class="upcoming-campaign-thumbnail-block campaign-page"><a href="/campaign/women-rights-violence" class="campaign-thumb-link-block w-inline-block"><img alt="Upcoming Campaign Thumb Image" loading="lazy" src="assets/63da017f4207255d8e2f7bf0_5.jpg" class="upcoming-campaign-thumbnail-image"/></a></div>
-                <div
-                    class="upcoming-campaign-single-info-block campaign-page">
-                    <div class="campaign-date-title-block campaign-page">
-                        <div class="campaign-date-block">
-                            <div class="campaign-date">15 Feb</div>
-                        </div>
-                        <div class="campaign-title-venue-block">
-                            <a href="/campaign/women-rights-violence" class="campaign-title-link-block w-inline-block">
-                                <h4 class="campaign-title">Women Rights Violence</h4>
-                            </a>
-                            <div class="campaign-venue-block">
-                                <div class="campaign-venue-text">Venue:</div>
-                                <div class="campaign-venue-name">Molex Square, New York</div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="campaign-summary">To make sure all Citizen rights, you have to work together better country our for human rights</p>
-                    <div class="campaign-time-block">
-                        <div class="campaign-time-text">Time:</div>
-                        <div class="campaign-time">2pm - 5pm</div>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <div role="listitem" class="campaign-item w-dyn-item">
-        <div class="upcoming-campaign-single-content campaign-page">
-            <div class="upcoming-campaign-thumbnail-block campaign-page"><a href="/campaign/civil-rights-campaign" class="campaign-thumb-link-block w-inline-block"><img alt="Upcoming Campaign Thumb Image" loading="lazy" src="assets/63da0161de0a10fcb43fbf90_6.jpg" class="upcoming-campaign-thumbnail-image"/></a></div>
-            <div
-                class="upcoming-campaign-single-info-block campaign-page">
-                <div class="campaign-date-title-block campaign-page">
-                    <div class="campaign-date-block">
-                        <div class="campaign-date">15 Feb</div>
-                    </div>
-                    <div class="campaign-title-venue-block">
-                        <a href="/campaign/civil-rights-campaign" class="campaign-title-link-block w-inline-block">
-                            <h4 class="campaign-title">Civil Rights Campaign</h4>
-                        </a>
-                        <div class="campaign-venue-block">
-                            <div class="campaign-venue-text">Venue:</div>
-                            <div class="campaign-venue-name">Molex Square, New York</div>
-                        </div>
-                    </div>
-                </div>
-                <p class="campaign-summary">To make sure all Citizen rights, you have to work together better country our for human rights</p>
-                <div class="campaign-time-block">
-                    <div class="campaign-time-text">Time:</div>
-                    <div class="campaign-time">2pm - 5pm</div>
-                </div>
-        </div>
-    </div>
-    </div>
-    <div role="listitem" class="campaign-item w-dyn-item">
-        <div class="upcoming-campaign-single-content campaign-page">
-            <div class="upcoming-campaign-thumbnail-block campaign-page"><a href="/campaign/tax-reduce-campaign" class="campaign-thumb-link-block w-inline-block"><img alt="Upcoming Campaign Thumb Image" loading="lazy" src="assets/63da013e9128da24f65b161d_7.jpg" class="upcoming-campaign-thumbnail-image"/></a></div>
-            <div
-                class="upcoming-campaign-single-info-block campaign-page">
-                <div class="campaign-date-title-block campaign-page">
-                    <div class="campaign-date-block">
-                        <div class="campaign-date">15 Feb</div>
-                    </div>
-                    <div class="campaign-title-venue-block">
-                        <a href="/campaign/tax-reduce-campaign" class="campaign-title-link-block w-inline-block">
-                            <h4 class="campaign-title">Tax Reduce Campaign</h4>
-                        </a>
-                        <div class="campaign-venue-block">
-                            <div class="campaign-venue-text">Venue:</div>
-                            <div class="campaign-venue-name">Molex Square, New York</div>
-                        </div>
-                    </div>
-                </div>
-                <p class="campaign-summary">To make sure all Citizen rights, you have to work together better country our for human rights</p>
-                <div class="campaign-time-block">
-                    <div class="campaign-time-text">Time:</div>
-                    <div class="campaign-time">2pm - 5pm</div>
-                </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <section class="client-logo-section">
+
+        <!-- ===== FEED SCRIPTS ===== -->
+        <script>
+            (function() {
+                // Filter tabs
+                var tabs = document.querySelectorAll('#feedFilterTabs .feed-filter-tab');
+                var cards = document.querySelectorAll('#feedGrid .feed-card');
+                var featured = document.querySelector('.feed-featured-post');
+                var searchInput = document.getElementById('feedSearch');
+                var loadMoreBtn = document.getElementById('feedLoadMoreBtn');
+                var loadMoreCount = document.getElementById('feedLoadMoreCount');
+                var loadMoreWrapper = document.getElementById('feedLoadMore');
+                var visibleCount = 5;
+                var currentFilter = 'all';
+
+                function showInitialCards() {
+                    cards.forEach(function(card, i) {
+                        card.style.display = i < visibleCount ? '' : 'none';
+                        card.style.animation = i < visibleCount ? 'feedFadeIn 0.5s ease forwards' : 'none';
+                        card.style.animationDelay = (i * 0.1) + 's';
+                    });
+                    updateLoadMoreUI();
+                }
+
+                function filterAndSearch() {
+                    var query = searchInput.value.toLowerCase().trim();
+                    var visibleCards = [];
+
+                    cards.forEach(function(card, i) {
+                        var cat = card.getAttribute('data-category');
+                        var text = card.textContent.toLowerCase();
+                        var matchesFilter = currentFilter === 'all' || cat === currentFilter;
+                        var matchesSearch = !query || text.includes(query);
+
+                        if (matchesFilter && matchesSearch) {
+                            visibleCards.push(i);
+                        }
+                    });
+
+                    // Reset visible count
+                    var showCount = Math.min(visibleCount, visibleCards.length);
+
+                    cards.forEach(function(card, i) {
+                        var shouldShow = visibleCards.indexOf(i) < showCount;
+                        card.style.display = shouldShow ? '' : 'none';
+                        if (shouldShow) {
+                            card.style.animation = 'feedFadeIn 0.5s ease forwards';
+                            card.style.animationDelay = ((visibleCards.indexOf(i) % showCount) * 0.1) + 's';
+                        }
+                    });
+
+                    // Show/hide featured
+                    if (featured) {
+                        var featCat = featured.getAttribute('data-category');
+                        var featText = featured.textContent.toLowerCase();
+                        var featMatchesFilter = currentFilter === 'all' || featCat === currentFilter;
+                        var featMatchesSearch = !query || featText.includes(query);
+                        featured.style.display = (featMatchesFilter && featMatchesSearch) ? '' : 'none';
+                    }
+
+                    // Update load more
+                    if (visibleCards.length > showCount) {
+                        loadMoreWrapper.style.display = '';
+                        loadMoreCount.textContent = 'Showing ' + showCount + ' of ' + visibleCards.length + ' updates';
+                    } else {
+                        loadMoreWrapper.style.display = 'none';
+                    }
+
+                    // Store visible card indices for load more
+                    cards._visibleIndices = visibleCards;
+                }
+
+                function updateLoadMoreUI() {
+                    var query = searchInput.value.toLowerCase().trim();
+                    var visibleCards = [];
+                    cards.forEach(function(card, i) {
+                        var cat = card.getAttribute('data-category');
+                        var text = card.textContent.toLowerCase();
+                        if ((currentFilter === 'all' || cat === currentFilter) && (!query || text.includes(query))) {
+                            visibleCards.push(i);
+                        }
+                    });
+
+                    var showing = 0;
+                    cards.forEach(function(c) { if (c.style.display !== 'none') showing++; });
+
+                    if (visibleCards.length > showing) {
+                        loadMoreWrapper.style.display = '';
+                        loadMoreCount.textContent = 'Showing ' + showing + ' of ' + visibleCards.length + ' updates';
+                    } else {
+                        loadMoreWrapper.style.display = 'none';
+                    }
+                    cards._visibleIndices = visibleCards;
+                }
+
+                // Tab clicks
+                tabs.forEach(function(tab) {
+                    tab.addEventListener('click', function() {
+                        tabs.forEach(function(t) { t.classList.remove('active'); });
+                        tab.classList.add('active');
+                        currentFilter = tab.getAttribute('data-filter');
+                        visibleCount = 5;
+                        filterAndSearch();
+                    });
+                });
+
+                // Search
+                searchInput.addEventListener('input', function() {
+                    visibleCount = 5;
+                    filterAndSearch();
+                });
+
+                // Load more
+                loadMoreBtn.addEventListener('click', function() {
+                    var query = searchInput.value.toLowerCase().trim();
+                    var visibleCards = [];
+                    cards.forEach(function(card, i) {
+                        var cat = card.getAttribute('data-category');
+                        var text = card.textContent.toLowerCase();
+                        if ((currentFilter === 'all' || cat === currentFilter) && (!query || text.includes(query))) {
+                            visibleCards.push(i);
+                        }
+                    });
+
+                    var currentlyShowing = 0;
+                    cards.forEach(function(c) { if (c.style.display !== 'none') currentlyShowing++; });
+
+                    var newCount = Math.min(currentlyShowing + 3, visibleCards.length);
+                    for (var i = currentlyShowing; i < newCount; i++) {
+                        var cardIdx = visibleCards[i];
+                        cards[cardIdx].style.display = '';
+                        cards[cardIdx].style.animation = 'feedFadeIn 0.5s ease forwards';
+                        cards[cardIdx].style.animationDelay = ((i - currentlyShowing) * 0.1) + 's';
+                    }
+
+                    if (newCount >= visibleCards.length) {
+                        loadMoreBtn.textContent = 'All updates loaded ✓';
+                        loadMoreBtn.style.opacity = '0.6';
+                        loadMoreBtn.style.pointerEvents = 'none';
+                    }
+
+                    loadMoreCount.textContent = 'Showing ' + newCount + ' of ' + visibleCards.length + ' updates';
+                });
+
+                // Init
+                showInitialCards();
+            })();
+
+            // Share function
+            function sharePost(title, url) {
+                if (navigator.share) {
+                    navigator.share({ title: title, url: url }).catch(function() {});
+                } else {
+                    navigator.clipboard.writeText(title + ' - ' + url).then(function() {
+                        alert('Link copied to clipboard!');
+                    }).catch(function() {
+                        prompt('Copy this link:', url);
+                    });
+                }
+            }
+        </script>
+
+<section class="client-logo-section">
         <div class="container w-container">
             <div class="client-logo-wrapper">
                 <div class="client-logo-inner">
