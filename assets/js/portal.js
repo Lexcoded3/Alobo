@@ -127,7 +127,7 @@
             return { success: true, request: newRequest };
         },
 
-        getCampaignStats: function() {
+        getFundStats: function() {
             this.init();
             return {
                 goal: 50000000,
@@ -138,7 +138,7 @@
         },
 
         addDonation: function(amount) {
-            var stats = this.getCampaignStats();
+            var stats = this.getFundStats();
             var newRaised = stats.raised + amount;
             var newDonors = stats.donors + 1;
             localStorage.setItem('alobo_raised_amount', newRaised.toString());
