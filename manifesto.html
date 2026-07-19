@@ -24,6 +24,1304 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" href="assets/favicons/favicon-32x32.png">
+
+    <style>
+/* FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, accent-color typography (#6fa8dc = soft sky blue against deep navy #0e2350), pill newsletter form (48px input + blue Submit with focus-within ring), social-icons row (40px circles, blue hover lift), brand tagline, column stacking at ≤767 and ≤479.
+           OVERRIDES webflow CSS by being same specificity but later source order (this <style> tag is in <head> AFTER the linked webflow CSS file).
+           Survives Webflow re-exports because it lives in <head>'s inline <style>, not the linked file. To persist across re-exports: mirror in Webflow Designer → Page Settings → Custom Code → "Head". */
+        .footer {
+            position: relative;
+            background-color: #0e2350;
+            isolation: isolate;
+        }
+        .footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(14, 35, 80, 0.93) 0%, rgba(14, 35, 80, 0.78) 50%, rgba(14, 35, 80, 0.93) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .footer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6fa8dc 0%, #6fa8dc 35%, #ffffff 35%, #ffffff 65%, #6fa8dc 65%, #6fa8dc 100%);
+            z-index: 3;
+        }
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            padding-top: 110px;
+            padding-bottom: 60px;
+        }
+        .footer-title {
+            margin-bottom: 28px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #6fa8dc;
+            position: relative;
+            padding-bottom: 14px;
+        }
+        .footer-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 36px;
+            height: 2px;
+            background: #6fa8dc;
+        }
+        .footer-title.left-title {
+            margin-bottom: 16px;
+            color: #ffffff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding-bottom: 0;
+        }
+        .footer-title.left-title::after {
+            display: none;
+        }
+        .footer-text {
+            margin-bottom: 12px;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .footer-tagline {
+            margin-bottom: 26px;
+            font-family: Urbanist, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.78);
+            letter-spacing: 0.2px;
+            font-style: italic;
+        }
+        .footer-link {
+            margin-bottom: 14px;
+            padding-left: 0;
+            transition: color 200ms ease;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 16px;
+            line-height: 1.4;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            padding-left: 0;
+            color: #6fa8dc;
+        }
+        .footer-address-text {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .footer-subtitle {
+            margin-bottom: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            color: #6fa8dc;
+            font-weight: 700;
+        }
+        .phone-number, .website-link, .mail-address {
+            color: rgba(255, 255, 255, 0.92);
+            transition: color 200ms ease;
+        }
+        .phone-number:hover, .website-link:hover, .mail-address:hover {
+            color: #6fa8dc;
+        }
+        .footer-form {
+            margin-bottom: 20px;
+        }
+        .footer-form-container {
+            flex-direction: row;
+            align-items: stretch;
+            grid-row-gap: 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 30px;
+            padding: 4px;
+            transition: border-color 200ms ease, background 200ms ease;
+        }
+        .footer-form-container:focus-within {
+            border-color: #6fa8dc;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .footer-form-input {
+            flex: 1;
+            width: auto;
+            height: 48px;
+            margin-right: 0;
+            padding: 0 18px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1;
+        }
+        .footer-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+        }
+        .footer-form-input:focus {
+            outline: none;
+            border: none;
+        }
+        .footer-form-submit-button {
+            flex: 0 0 auto;
+            align-self: stretch;
+            padding: 0 24px;
+            background: #6fa8dc;
+            color: #0e2350;
+            border-radius: 26px;
+            font-family: Urbanist, sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 200ms ease, transform 200ms ease;
+        }
+        .footer-form-submit-button:hover {
+            background: #8fbce8;
+            transform: translateY(-1px);
+        }
+        .footer-social-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 18px 0 14px;
+        }
+        .footer-social-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+        }
+        .footer-social-item:hover {
+            background: #6fa8dc;
+            border-color: #6fa8dc;
+            transform: translateY(-2px);
+        }
+        .footer-social-item img, .footer-social-item svg {
+            width: 18px;
+            height: 18px;
+        }
+        .footer-social-item img {
+            filter: brightness(0) invert(1);
+        }
+        .footer-social-item:hover img {
+            filter: none;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 24px;
+        }
+        .footer-bottom-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+        .bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: underline;
+        }
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+        .footer-bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 200ms ease;
+        }
+        .footer-bottom-link:hover {
+            color: #6fa8dc;
+        }
+        @media (max-width: 767px) {
+            .footer-inner {
+                padding-top: 80px;
+                padding-bottom: 50px;
+            }
+            .footer-wrapper {
+                flex-direction: column;
+                grid-row-gap: 50px;
+            }
+            .footer-logo-block {
+                max-width: 100%;
+            }
+            .footer-content-block {
+                width: 100%;
+                flex-wrap: wrap;
+                grid-row-gap: 36px;
+            }
+            .footer-block {
+                min-width: 0;
+                flex: 1 1 calc(50% - 18px);
+            }
+            .footer-form-container {
+                flex-wrap: nowrap;
+            }
+        }
+        @media (max-width: 479px) {
+            .footer-inner {
+                padding-top: 64px;
+                padding-bottom: 40px;
+            }
+            .footer-text {
+                font-size: 24px;
+            }
+            .footer-title {
+                font-size: 18px;
+            }
+            .footer-block {
+                flex: 1 1 100%;
+            }
+            .footer-form-container {
+                flex-direction: column;
+                background: transparent;
+                border: none;
+                padding: 0;
+                align-items: stretch;
+            }
+            .footer-form-input {
+                height: 50px;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.32);
+                border-radius: 30px;
+                margin-bottom: 12px;
+            }
+            .footer-form-submit-button {
+                height: 50px;
+                border-radius: 30px;
+                padding: 0 18px;
+            }
+        }
+    </style>
+
+
+    <style>
+FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, accent-color typography (#6fa8dc = soft sky blue against deep navy #0e2350), pill newsletter form (48px input + blue Submit with focus-within ring), social-icons row (40px circles, blue hover lift), brand tagline, column stacking at ≤767 and ≤479.
+           OVERRIDES webflow CSS by being same specificity but later source order (this <style> tag is in <head> AFTER the linked webflow CSS file).
+           Survives Webflow re-exports because it lives in <head>'s inline <style>, not the linked file. To persist across re-exports: mirror in Webflow Designer → Page Settings → Custom Code → "Head". */
+        .footer {
+            position: relative;
+            background-color: #0e2350;
+            isolation: isolate;
+        }
+        .footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(14, 35, 80, 0.93) 0%, rgba(14, 35, 80, 0.78) 50%, rgba(14, 35, 80, 0.93) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .footer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6fa8dc 0%, #6fa8dc 35%, #ffffff 35%, #ffffff 65%, #6fa8dc 65%, #6fa8dc 100%);
+            z-index: 3;
+        }
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            padding-top: 110px;
+            padding-bottom: 60px;
+        }
+        .footer-title {
+            margin-bottom: 28px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #6fa8dc;
+            position: relative;
+            padding-bottom: 14px;
+        }
+        .footer-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 36px;
+            height: 2px;
+            background: #6fa8dc;
+        }
+        .footer-title.left-title {
+            margin-bottom: 16px;
+            color: #ffffff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding-bottom: 0;
+        }
+        .footer-title.left-title::after {
+            display: none;
+        }
+        .footer-text {
+            margin-bottom: 12px;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .footer-tagline {
+            margin-bottom: 26px;
+            font-family: Urbanist, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.78);
+            letter-spacing: 0.2px;
+            font-style: italic;
+        }
+        .footer-link {
+            margin-bottom: 14px;
+            padding-left: 0;
+            transition: color 200ms ease;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 16px;
+            line-height: 1.4;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            padding-left: 0;
+            color: #6fa8dc;
+        }
+        .footer-address-text {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .footer-subtitle {
+            margin-bottom: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            color: #6fa8dc;
+            font-weight: 700;
+        }
+        .phone-number, .website-link, .mail-address {
+            color: rgba(255, 255, 255, 0.92);
+            transition: color 200ms ease;
+        }
+        .phone-number:hover, .website-link:hover, .mail-address:hover {
+            color: #6fa8dc;
+        }
+        .footer-form {
+            margin-bottom: 20px;
+        }
+        .footer-form-container {
+            flex-direction: row;
+            align-items: stretch;
+            grid-row-gap: 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 30px;
+            padding: 4px;
+            transition: border-color 200ms ease, background 200ms ease;
+        }
+        .footer-form-container:focus-within {
+            border-color: #6fa8dc;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .footer-form-input {
+            flex: 1;
+            width: auto;
+            height: 48px;
+            margin-right: 0;
+            padding: 0 18px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1;
+        }
+        .footer-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+        }
+        .footer-form-input:focus {
+            outline: none;
+            border: none;
+        }
+        .footer-form-submit-button {
+            flex: 0 0 auto;
+            align-self: stretch;
+            padding: 0 24px;
+            background: #6fa8dc;
+            color: #0e2350;
+            border-radius: 26px;
+            font-family: Urbanist, sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 200ms ease, transform 200ms ease;
+        }
+        .footer-form-submit-button:hover {
+            background: #8fbce8;
+            transform: translateY(-1px);
+        }
+        .footer-social-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 18px 0 14px;
+        }
+        .footer-social-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+        }
+        .footer-social-item:hover {
+            background: #6fa8dc;
+            border-color: #6fa8dc;
+            transform: translateY(-2px);
+        }
+        .footer-social-item img, .footer-social-item svg {
+            width: 18px;
+            height: 18px;
+        }
+        .footer-social-item img {
+            filter: brightness(0) invert(1);
+        }
+        .footer-social-item:hover img {
+            filter: none;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 24px;
+        }
+        .footer-bottom-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+        .bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: underline;
+        }
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+        .footer-bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 200ms ease;
+        }
+        .footer-bottom-link:hover {
+            color: #6fa8dc;
+        }
+        @media (max-width: 767px) {
+            .footer-inner {
+                padding-top: 80px;
+                padding-bottom: 50px;
+            }
+            .footer-wrapper {
+                flex-direction: column;
+                grid-row-gap: 50px;
+            }
+            .footer-logo-block {
+                max-width: 100%;
+            }
+            .footer-content-block {
+                width: 100%;
+                flex-wrap: wrap;
+                grid-row-gap: 36px;
+            }
+            .footer-block {
+                min-width: 0;
+                flex: 1 1 calc(50% - 18px);
+            }
+            .footer-form-container {
+                flex-direction: column;
+                width: 100%;
+                padding: 12px;
+                gap: 10px;
+                box-sizing: border-box;
+            }
+            .footer-form-input {
+                width: 100%;
+                height: 48px;
+                margin-right: 0;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                padding: 0 14px;
+                background: rgba(255, 255, 255, 0.06);
+                box-sizing: border-box;
+            }
+            .footer-form-input:focus {
+                outline: none;
+                border: 1px solid #6fa8dc;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .footer-form-submit-button {
+                width: 100%;
+                height: 48px;
+                border-radius: 12px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+        @media (max-width: 479px) {
+            .footer-inner {
+                padding-top: 64px;
+                padding-bottom: 40px;
+            }
+            .footer-text {
+                font-size: 24px;
+            }
+            .footer-title {
+                font-size: 18px;
+            }
+            .footer-block {
+                flex: 1 1 100%;
+            }
+            .footer-form-container {
+                flex-direction: column;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.32);
+                border-radius: 16px;
+                padding: 14px;
+                gap: 12px;
+                align-items: stretch;
+                box-sizing: border-box;
+            }
+            .footer-form-input {
+                width: 100%;
+                height: 48px;
+                padding: 0 14px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.06);
+                margin-bottom: 0;
+                font-size: 16px;
+                color: #ffffff;
+                box-sizing: border-box;
+            }
+            .footer-form-input:focus {
+                outline: none;
+                border: 1px solid #6fa8dc;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .footer-form-submit-button {
+                width: 100%;
+                height: 48px;
+                border-radius: 12px;
+                padding: 0 18px;
+                font-size: 14px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+
+
+    <style>
+FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, accent-color typography (#6fa8dc = soft sky blue against deep navy #0e2350), pill newsletter form (48px input + blue Submit with focus-within ring), social-icons row (40px circles, blue hover lift), brand tagline, column stacking at ≤767 and ≤479.
+           OVERRIDES webflow CSS by being same specificity but later source order (this <style> tag is in <head> AFTER the linked webflow CSS file).
+           Survives Webflow re-exports because it lives in <head>'s inline <style>, not the linked file. To persist across re-exports: mirror in Webflow Designer → Page Settings → Custom Code → "Head". */
+        .footer {
+            position: relative;
+            background-color: #0e2350;
+            isolation: isolate;
+        }
+        .footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(14, 35, 80, 0.93) 0%, rgba(14, 35, 80, 0.78) 50%, rgba(14, 35, 80, 0.93) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .footer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6fa8dc 0%, #6fa8dc 35%, #ffffff 35%, #ffffff 65%, #6fa8dc 65%, #6fa8dc 100%);
+            z-index: 3;
+        }
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            padding-top: 110px;
+            padding-bottom: 60px;
+        }
+        .footer-title {
+            margin-bottom: 28px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #6fa8dc;
+            position: relative;
+            padding-bottom: 14px;
+        }
+        .footer-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 36px;
+            height: 2px;
+            background: #6fa8dc;
+        }
+        .footer-title.left-title {
+            margin-bottom: 16px;
+            color: #ffffff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding-bottom: 0;
+        }
+        .footer-title.left-title::after {
+            display: none;
+        }
+        .footer-text {
+            margin-bottom: 12px;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .footer-tagline {
+            margin-bottom: 26px;
+            font-family: Urbanist, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.78);
+            letter-spacing: 0.2px;
+            font-style: italic;
+        }
+        .footer-link {
+            margin-bottom: 14px;
+            padding-left: 0;
+            transition: color 200ms ease;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 16px;
+            line-height: 1.4;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            padding-left: 0;
+            color: #6fa8dc;
+        }
+        .footer-address-text {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .footer-subtitle {
+            margin-bottom: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            color: #6fa8dc;
+            font-weight: 700;
+        }
+        .phone-number, .website-link, .mail-address {
+            color: rgba(255, 255, 255, 0.92);
+            transition: color 200ms ease;
+        }
+        .phone-number:hover, .website-link:hover, .mail-address:hover {
+            color: #6fa8dc;
+        }
+        .footer-form {
+            margin-bottom: 20px;
+        }
+        .footer-form-container {
+            flex-direction: row;
+            align-items: stretch;
+            grid-row-gap: 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 30px;
+            padding: 4px;
+            transition: border-color 200ms ease, background 200ms ease;
+        }
+        .footer-form-container:focus-within {
+            border-color: #6fa8dc;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .footer-form-input {
+            flex: 1;
+            width: auto;
+            height: 48px;
+            margin-right: 0;
+            padding: 0 18px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1;
+        }
+        .footer-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+        }
+        .footer-form-input:focus {
+            outline: none;
+            border: none;
+        }
+        .footer-form-submit-button {
+            flex: 0 0 auto;
+            align-self: stretch;
+            padding: 0 24px;
+            background: #6fa8dc;
+            color: #0e2350;
+            border-radius: 26px;
+            font-family: Urbanist, sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 200ms ease, transform 200ms ease;
+        }
+        .footer-form-submit-button:hover {
+            background: #8fbce8;
+            transform: translateY(-1px);
+        }
+        .footer-social-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 18px 0 14px;
+        }
+        .footer-social-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+        }
+        .footer-social-item:hover {
+            background: #6fa8dc;
+            border-color: #6fa8dc;
+            transform: translateY(-2px);
+        }
+        .footer-social-item img, .footer-social-item svg {
+            width: 18px;
+            height: 18px;
+        }
+        .footer-social-item img {
+            filter: brightness(0) invert(1);
+        }
+        .footer-social-item:hover img {
+            filter: none;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 24px;
+        }
+        .footer-bottom-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+        .bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: underline;
+        }
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+        .footer-bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 200ms ease;
+        }
+        .footer-bottom-link:hover {
+            color: #6fa8dc;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        @media (max-width: 767px) {
+            .footer-inner {
+                padding-top: 80px;
+                padding-bottom: 50px;
+            }
+            .footer-wrapper {
+                flex-direction: column;
+                grid-row-gap: 50px;
+            }
+            .footer-logo-block {
+                max-width: 100%;
+            }
+            .footer-content-block {
+                width: 100%;
+                flex-wrap: wrap;
+                grid-row-gap: 36px;
+            }
+            .footer-block {
+                min-width: 0;
+                flex: 1 1 calc(50% - 18px);
+            }
+            .footer-form-container {
+                flex-direction: column;
+                width: 100%;
+                padding: 12px;
+                gap: 10px;
+                box-sizing: border-box;
+            }
+            .footer-form-input {
+                width: 100%;
+                height: 48px;
+                margin-right: 0;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                padding: 0 14px;
+                background: rgba(255, 255, 255, 0.06);
+                box-sizing: border-box;
+            }
+            .footer-form-input:focus {
+                outline: none;
+                border: 1px solid #6fa8dc;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .footer-form-submit-button {
+                width: 100%;
+                height: 48px;
+                border-radius: 12px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+        @media (max-width: 479px) {
+            .footer-inner {
+                padding-top: 64px;
+                padding-bottom: 40px;
+            }
+            .footer-text {
+                font-size: 24px;
+            }
+            .footer-title {
+                font-size: 18px;
+            }
+            .footer-block {
+                flex: 1 1 100%;
+            }
+            .footer-form-container {
+                flex-direction: column;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.32);
+                border-radius: 16px;
+                padding: 14px;
+                gap: 12px;
+                align-items: stretch;
+                box-sizing: border-box;
+            }
+            .footer-form-input {
+                width: 100%;
+                height: 48px;
+                padding: 0 14px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.06);
+                margin-bottom: 0;
+                font-size: 16px;
+                color: #ffffff;
+                box-sizing: border-box;
+            }
+            .footer-form-input:focus {
+                outline: none;
+                border: 1px solid #6fa8dc;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .footer-form-submit-button {
+                width: 100%;
+                height: 48px;
+                border-radius: 12px;
+                padding: 0 18px;
+                font-size: 14px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+
+
+    <style>
+FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, accent-color typography (#6fa8dc = soft sky blue against deep navy #0e2350), pill newsletter form (48px input + blue Submit with focus-within ring), social-icons row (40px circles, blue hover lift), brand tagline, column stacking at ≤767 and ≤479.
+           OVERRIDES webflow CSS by being same specificity but later source order (this <style> tag is in <head> AFTER the linked webflow CSS file).
+           Survives Webflow re-exports because it lives in <head>'s inline <style>, not the linked file. To persist across re-exports: mirror in Webflow Designer → Page Settings → Custom Code → "Head". */
+        .footer {
+            position: relative;
+            background-color: #0e2350;
+            isolation: isolate;
+        }
+        .footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(14, 35, 80, 0.93) 0%, rgba(14, 35, 80, 0.78) 50%, rgba(14, 35, 80, 0.93) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .footer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6fa8dc 0%, #6fa8dc 35%, #ffffff 35%, #ffffff 65%, #6fa8dc 65%, #6fa8dc 100%);
+            z-index: 3;
+        }
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            padding-top: 110px;
+            padding-bottom: 60px;
+        }
+        .footer-title {
+            margin-bottom: 28px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #6fa8dc;
+            position: relative;
+            padding-bottom: 14px;
+        }
+        .footer-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 36px;
+            height: 2px;
+            background: #6fa8dc;
+        }
+        .footer-title.left-title {
+            margin-bottom: 16px;
+            color: #ffffff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding-bottom: 0;
+        }
+        .footer-title.left-title::after {
+            display: none;
+        }
+        .footer-text {
+            margin-bottom: 12px;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .footer-tagline {
+            margin-bottom: 26px;
+            font-family: Urbanist, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.78);
+            letter-spacing: 0.2px;
+            font-style: italic;
+        }
+        .footer-link {
+            margin-bottom: 14px;
+            padding-left: 0;
+            transition: color 200ms ease;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 16px;
+            line-height: 1.4;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            padding-left: 0;
+            color: #6fa8dc;
+        }
+        .footer-address-text {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .footer-subtitle {
+            margin-bottom: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            color: #6fa8dc;
+            font-weight: 700;
+        }
+        .phone-number, .website-link, .mail-address {
+            color: rgba(255, 255, 255, 0.92);
+            transition: color 200ms ease;
+        }
+        .phone-number:hover, .website-link:hover, .mail-address:hover {
+            color: #6fa8dc;
+        }
+        .footer-form {
+            margin-bottom: 20px;
+        }
+        .footer-form-container {
+            flex-direction: row;
+            align-items: stretch;
+            grid-row-gap: 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 30px;
+            padding: 4px;
+            transition: border-color 200ms ease, background 200ms ease;
+        }
+        .footer-form-container:focus-within {
+            border-color: #6fa8dc;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .footer-form-input {
+            flex: 1;
+            width: auto;
+            height: 48px;
+            margin-right: 0;
+            padding: 0 18px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1;
+        }
+        .footer-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+        }
+        .footer-form-input:focus {
+            outline: none;
+            border: none;
+        }
+        .footer-form-submit-button {
+            flex: 0 0 auto;
+            align-self: stretch;
+            padding: 0 24px;
+            background: #6fa8dc;
+            color: #0e2350;
+            border-radius: 26px;
+            font-family: Urbanist, sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 200ms ease, transform 200ms ease;
+        }
+        .footer-form-submit-button:hover {
+            background: #8fbce8;
+            transform: translateY(-1px);
+        }
+        .footer-social-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 18px 0 14px;
+        }
+        .footer-social-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+        }
+        .footer-social-item:hover {
+            background: #6fa8dc;
+            border-color: #6fa8dc;
+            transform: translateY(-2px);
+        }
+        .footer-social-item img, .footer-social-item svg {
+            width: 18px;
+            height: 18px;
+        }
+        .footer-social-item img {
+            filter: brightness(0) invert(1);
+        }
+        .footer-social-item:hover img {
+            filter: none;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 24px;
+        }
+        .footer-bottom-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+        .bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: underline;
+        }
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+        .footer-bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 200ms ease;
+        }
+        .footer-bottom-link:hover {
+            color: #6fa8dc;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        @media (max-width: 767px) {
+            .footer-inner {
+                padding-top: 80px;
+                padding-bottom: 50px;
+            }
+            .footer-wrapper {
+                flex-direction: column;
+                grid-row-gap: 50px;
+            }
+            .footer-logo-block {
+                max-width: 100%;
+            }
+            .footer-content-block {
+                width: 100%;
+                flex-wrap: wrap;
+                grid-row-gap: 36px;
+            }
+            .footer-block {
+                min-width: 0;
+                flex: 1 1 calc(50% - 18px);
+            }
+            .footer-form-container {
+                flex-direction: column;
+                width: 100%;
+                padding: 12px;
+                gap: 10px;
+                box-sizing: border-box;
+            }
+            .footer-form-input {
+                width: 100%;
+                height: 48px;
+                margin-right: 0;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                padding: 0 14px;
+                background: rgba(255, 255, 255, 0.06);
+                box-sizing: border-box;
+            }
+            .footer-form-input:focus {
+                outline: none;
+                border: 1px solid #6fa8dc;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .footer-form-submit-button {
+                width: 100%;
+                height: 48px;
+                border-radius: 12px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+        @media (max-width: 479px) {
+            .footer-inner {
+                padding-top: 64px;
+                padding-bottom: 40px;
+            }
+            .footer-text {
+                font-size: 24px;
+            }
+            .footer-title {
+                font-size: 18px;
+            }
+            .footer-block {
+                flex: 1 1 100%;
+            }
+            .footer-form-container {
+                flex-direction: column;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.32);
+                border-radius: 16px;
+                padding: 14px;
+                gap: 12px;
+                align-items: stretch;
+                box-sizing: border-box;
+            }
+            .footer-form-input {
+                width: 100%;
+                height: 48px;
+                padding: 0 14px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.06);
+                margin-bottom: 0;
+                font-size: 16px;
+                color: #ffffff;
+                box-sizing: border-box;
+            }
+            .footer-form-input:focus {
+                outline: none;
+                border: 1px solid #6fa8dc;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .footer-form-submit-button {
+                width: 100%;
+                height: 48px;
+                border-radius: 12px;
+                padding: 0 18px;
+                font-size: 14px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -422,58 +1720,113 @@
                 </div>
             </div>
         </section>
-        <footer class="footer wf-section">
-            <div class="footer-inner">
-                <div class="container w-container">
-                    <div class="footer-wrapper">
-                        <div class="footer-logo-block">
-                            <div class="footer-title left-title">NEWSLETTER</div>
-                            <p class="footer-text">Get latest Updates directly in inbox</p>
-                            <div class="footer-form w-form">
-                                <form id="wf-form-Hero-Form" name="wf-form-Hero-Form" data-name="Hero Form" method="get" class="footer-form-container"><input type="text" class="footer-form-input w-input" maxlength="256" name="Hero-Email-2" data-name="Hero Email 2" aria-label="Enter your email" placeholder="Your email here" id="Hero-Email-2" required="" /><input type="submit"
-                                        value="Subscribe" data-wait="Please wait..." class="footer-form-submit-button w-button" /></form>
-                                <div class="w-form-done">
-                                    <div>Thank you! Your submission has been received!</div>
-                                </div>
-                                <div class="w-form-fail">
-                                    <div>Oops! Something went wrong while submitting the form.</div>
-                                </div>
+        <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div class="container w-container">
+
+                <div class="footer-wrapper">
+
+                    <div class="footer-logo-block">
+
+                        <div class="footer-title left-title">NEWSLETTER</div>
+
+                        <p class="footer-text">Get latest Updates directly in inbox</p>
+                        <p class="footer-tagline">Proudly serving the people of Soroti City East.</p>
+
+                        <div class="footer-form w-form">
+
+                            <form id="wf-form-Hero-Form" name="wf-form-Hero-Form" data-name="Hero Form" method="get" class="footer-form-container" data-wf-page-id="63d5ec95050b76518dad34fe" data-wf-element-id="98695158-3343-24cb-d6d0-3c987e956111"><label for="Hero-Email-2" class="sr-only">Email address for newsletter</label><input class="footer-form-input w-input" maxlength="256" name="Hero-Email-2" data-name="Hero Email 2" placeholder="Your email here" type="email" id="Hero-Email-2" required="" autocomplete="email" /><input type="submit"
+
+                                    data-wait="Please wait..." class="footer-form-submit-button w-button" value="Subscribe" /></form>
+
+                            <div class="w-form-done">
+
+                                <div>Thank you! Your submission has been received!</div>
+
                             </div>
-                            <div class="footer-bottom-text">Powered by <a href="http://webflow.com/" target="_blank" class="bottom-link">Webflow</a></div>
-                        </div>
-                        <div class="footer-content-block">
-                            <div class="footer-block">
-                                <div class="footer-title">Nevigation</div><a href="about.html" class="footer-link">About Us</a><a href="manifesto.html" aria-current="page" class="footer-link w--current">Manifesto</a><a href="issues.html" class="footer-link">Priorities</a><a href="blog.html" class="footer-link">Blog Post</a>
-                                <a
-                                    href="party-members.html" class="footer-link">Party Members</a><a href="contact.html" class="footer-link">Contact us</a></div>
-                            <div class="footer-block">
-                                <div class="footer-title">Important</div><a href="feed.html" class="footer-link">Feed</a><a href="volunteer.html" class="footer-link">Be a Volunteer</a><a href="#" class="footer-link">Press Conference</a><a href="/style-guide" class="footer-link">Style Guide</a>
-                                <a
-                                    href="/changelog" class="footer-link">Change Log</a><a href="license.html" class="footer-link">License</a></div>
-                            <div class="footer-block">
-                                <div class="footer-title">Contact info</div>
-                                <div class="contact-number-block"><address class="address-block"><div class="footer-subtitle">Head Quater</div><div class="footer-address-text">Soroti City East Constituency Office, Soroti City, Uganda</div></address>
-                                    <div class="mail-address-block">
-                                        <div class="footer-subtitle">Web info</div><a href="mailto:Info@example.com?subject=webflow%20mail" class="mail-address">info@joanalobo.ug</a><a href="http://www.joanalobo.ug" target="_blank" class="website-link">www.joanalobo.ug</a></div>
-                                    <div
-                                        class="phone-block">
-                                        <div class="footer-subtitle">Phone no</div>
-                                        <div class="number-block"><a href="tel:012345678987" class="phone-number">+256 700 000000</a>
-                                            <div class="number-text">/</div><a href="tel:012345678987" class="phone-number">+256 700 000000</a></div>
-                                </div>
+
+                            <div class="w-form-fail">
+
+                                <div>Oops! Something went wrong while submitting the form.</div>
+
                             </div>
+
                         </div>
+
+                        <div class="footer-social-icons" aria-label="Social media">
+                            <a href="#" class="footer-social-item" aria-label="Facebook"><img src="assets/63ec674093791c73abe6fb6b_facebook-2.svg" alt="" width="18" height="18" /></a>
+                            <a href="#" class="footer-social-item" aria-label="X / Twitter"><img src="assets/63ec6740cdcda6865ce4d04a_twitter-2.svg" alt="" width="18" height="18" /></a>
+                            <a href="#" class="footer-social-item" aria-label="Instagram"><img src="assets/63ec6740a92a9cdc3280b51a_instagram-2.svg" alt="" width="18" height="18" /></a>
+                            <a href="https://chat.whatsapp.com/INVITE_LINK_HERE" class="footer-social-item" aria-label="WhatsApp" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+                        </div>
+
+                        <div class="footer-bottom-text">Powered by <a href="http://webflow.com/" target="_blank" class="bottom-link">Webflow</a></div>
+
                     </div>
+
+                    <div class="footer-content-block">
+
+                        <div class="footer-block">
+
+                            <div class="footer-title">Navigation</div><a href="about.html" class="footer-link">About Us</a><a href="manifesto.html" class="footer-link">Manifesto</a><a href="issues.html" class="footer-link">Priorities</a><a href="blog.html" class="footer-link">Blog Post</a><a href="party-members.html"
+
+                                class="footer-link">Party Members</a><a href="contact.html" class="footer-link">Contact us</a></div>
+
+                        <div class="footer-block">
+
+                            <div class="footer-title">Important</div><a href="feed.html" class="footer-link">Feed</a><a href="volunteer.html" class="footer-link">Be a Volunteer</a><a href="#" class="footer-link">Press Conference</a><a href="/style-guide" class="footer-link">Style Guide</a>
+
+                            <a
+
+                                href="/changelog" class="footer-link">Change Log</a><a href="license.html" class="footer-link">License</a></div>
+
+                        <div class="footer-block">
+
+                            <div class="footer-title">Contact info</div>
+
+                            <div class="contact-number-block"><address class="address-block"><div class="footer-subtitle">Head Quater</div><div class="footer-address-text">Soroti City East Constituency Office, Soroti City, Uganda</div></address>
+
+                                <div class="mail-address-block">
+
+                                    <div class="footer-subtitle">Web info</div><a href="mailto:Info@example.com?subject=webflow%20mail" class="mail-address">info@joanalobo.ug</a><a href="https://www.joanalobo.ug" target="_blank" class="website-link">www.joanalobo.ug</a></div>
+
+                                <div
+
+                                    class="phone-block">
+
+                                    <div class="footer-subtitle">Phone no</div>
+
+                                    <div class="number-block"><a href="tel:012345678987" class="phone-number">+256 700 000000</a>
+
+                                        <div class="number-text">/</div><a href="tel:012345678987" class="phone-number">+256 700 000000</a></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="footer-bottom">
-                    <div class="footer-copyright">© 2026 Hon. Joan Alobo — Woman MP, Soroti City East. All rights reserved.</div>
-                    <div class="footer-social-block-two"><a href="login.html" class="footer-bottom-link">Login</a><a href="register.html" class="footer-bottom-link">Register</a></div>
-                </div>
+
             </div>
-    </div>
+
+            <div class="footer-bottom">
+
+                <div class="footer-copyright">© 2026 Hon. Joan Alobo — Woman MP, Soroti City East. All rights reserved.</div>
+
+                <div class="footer-social-block-two"><a href="login.html" class="footer-bottom-link">Login</a><a href="register.html" class="footer-bottom-link">Register</a></div>
+
+            </div>
+
+        </div>
+
+        </div>
+
     </footer>
     </div>
-    <script src="ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
     <script src="assets/js/webflow.0d826dc4d.js" type="text/javascript"></script>
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
     <!-- Mobile Bottom Tab Bar -->

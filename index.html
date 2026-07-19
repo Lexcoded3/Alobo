@@ -19,6 +19,16 @@
 
     <title>Hon. Joan Alobo — Woman MP, Soroti City East</title>
 
+    <meta content="Hon. Joan Acom Alobo is the Woman Member of Parliament for Soroti City East. Championing healthcare, education, youth jobs, and women's empowerment across Teso." name="description" />
+    <meta content="Hon. Joan Alobo — Woman MP, Soroti City East" property="og:title" />
+    <meta content="Hon. Joan Acom Alobo is the Woman Member of Parliament for Soroti City East. Championing healthcare, education, youth jobs, and women's empowerment across Teso." property="og:description" />
+    <meta content="https://joanalobo.ug/assets/main.jpg" property="og:image" />
+    <meta content="website" property="og:type" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="Hon. Joan Alobo — Woman MP, Soroti City East" name="twitter:title" />
+    <meta content="Hon. Joan Acom Alobo is the Woman Member of Parliament for Soroti City East. Championing healthcare, education, youth jobs, and women's empowerment across Teso." name="twitter:description" />
+    <meta content="https://joanalobo.ug/assets/main.jpg" name="twitter:image" />
+
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 
     <meta content="Webflow" name="generator" />
@@ -48,6 +58,390 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
 
     <link rel="apple-touch-icon" href="assets/favicons/favicon-32x32.png">
+
+    <!-- Donation section: keeping the bg image as a full-thumb overlay and content in normal flow so the submit button stays on the blue, WHILE TRIMMING internal vertical spacing (grid-row-gap, content padding-top/bottom, donation-tracker margin-bottom, and putting the 3 stats on a single row) so the section stays closer to the original ~500-600px footprint instead of growing ~318px and pushing the press-tweet-volunteer section visibly further down.
+         NOTE: manual <head> edits are overwritten by Webflow re-exports; mirror in Webflow Designer → Page Settings → Custom Code → "Head" to persist. -->
+    <style>
+        .campaign-donation-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .campaign-donation-content {
+            position: relative;
+            top: auto;
+            transform: none;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            z-index: 1;
+        }
+        .compaign-donation-form {
+            grid-row-gap: 14px;
+        }
+        .donation-tracker {
+            margin-bottom: 8px;
+        }
+        .donation-tracker-stats {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            text-align: center;
+        }
+        /* Volunteer section: pull GET INVOLVED + h2 closer to the previous section's bottom edge. */
+        .volunteer-section {
+            padding-top: 0;
+        }
+        /* Blog section: pull "From the Blog" closer to the press-tweet-volunteer section's bottom edge. */
+        .blog-section {
+            padding-top: 0;
+        }
+        /* blog-top-gap: a sibling utility class is also applied inside .blog-section (see index.html line 1371); without this scoped override it would re-add 40px of margin-top after we already zeroed the section's padding. Using descendant combinator so other pages or future usages of .blog-top-gap outside .blog-section are NOT affected. */
+        .blog-section .blog-top-gap {
+            margin-top: 0;
+        }
+        /* FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, accent-color typography (#6fa8dc = soft sky blue against deep navy #0e2350), pill newsletter form (48px input + blue Submit with focus-within ring), social-icons row (40px circles, blue hover lift), brand tagline, column stacking at ≤767 and ≤479.
+           OVERRIDES webflow CSS by being same specificity but later source order (this <style> tag is in <head> AFTER the linked webflow CSS file).
+           Survives Webflow re-exports because it lives in <head>'s inline <style>, not the linked file. To persist across re-exports: mirror in Webflow Designer → Page Settings → Custom Code → "Head". */
+        .footer {
+            position: relative;
+            background-color: #0e2350;
+            isolation: isolate;
+        }
+        .footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(14, 35, 80, 0.93) 0%, rgba(14, 35, 80, 0.78) 50%, rgba(14, 35, 80, 0.93) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .footer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6fa8dc 0%, #6fa8dc 35%, #ffffff 35%, #ffffff 65%, #6fa8dc 65%, #6fa8dc 100%);
+            z-index: 3;
+        }
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            padding-top: 110px;
+            padding-bottom: 60px;
+        }
+        .footer-title {
+            margin-bottom: 28px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #6fa8dc;
+            position: relative;
+            padding-bottom: 14px;
+        }
+        .footer-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 36px;
+            height: 2px;
+            background: #6fa8dc;
+        }
+        .footer-title.left-title {
+            margin-bottom: 16px;
+            color: #ffffff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding-bottom: 0;
+        }
+        .footer-title.left-title::after {
+            display: none;
+        }
+        .footer-text {
+            margin-bottom: 12px;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .footer-tagline {
+            margin-bottom: 26px;
+            font-family: Urbanist, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.78);
+            letter-spacing: 0.2px;
+            font-style: italic;
+        }
+        .footer-link {
+            margin-bottom: 14px;
+            padding-left: 0;
+            transition: color 200ms ease;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 16px;
+            line-height: 1.4;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            padding-left: 0;
+            color: #6fa8dc;
+        }
+        .footer-address-text {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .footer-subtitle {
+            margin-bottom: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            color: #6fa8dc;
+            font-weight: 700;
+        }
+        .phone-number, .website-link, .mail-address {
+            color: rgba(255, 255, 255, 0.92);
+            transition: color 200ms ease;
+        }
+        .phone-number:hover, .website-link:hover, .mail-address:hover {
+            color: #6fa8dc;
+        }
+        .footer-form {
+            margin-bottom: 20px;
+        }
+        .footer-form-container {
+            flex-direction: row;
+            align-items: stretch;
+            grid-row-gap: 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 30px;
+            padding: 4px;
+            transition: border-color 200ms ease, background 200ms ease;
+        }
+        .footer-form-container:focus-within {
+            border-color: #6fa8dc;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .footer-form-input {
+            flex: 1;
+            width: auto;
+            height: 48px;
+            margin-right: 0;
+            padding: 0 18px;
+            border: none;
+            background: transparent;
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1;
+        }
+        .footer-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+        }
+        .footer-form-input:focus {
+            outline: none;
+            border: none;
+        }
+        .footer-form-submit-button {
+            flex: 0 0 auto;
+            align-self: stretch;
+            padding: 0 24px;
+            background: #6fa8dc;
+            color: #0e2350;
+            border-radius: 26px;
+            font-family: Urbanist, sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 200ms ease, transform 200ms ease;
+        }
+        .footer-form-submit-button:hover {
+            background: #8fbce8;
+            transform: translateY(-1px);
+        }
+        .footer-social-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 18px 0 14px;
+        }
+        .footer-social-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+        }
+        .footer-social-item:hover {
+            background: #6fa8dc;
+            border-color: #6fa8dc;
+            transform: translateY(-2px);
+        }
+        .footer-social-item img, .footer-social-item svg {
+            width: 18px;
+            height: 18px;
+        }
+        .footer-social-item img {
+            filter: brightness(0) invert(1);
+        }
+        .footer-social-item:hover img {
+            filter: none;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 24px;
+        }
+        .footer-bottom-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+        .bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: underline;
+        }
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+        .footer-bottom-link {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 200ms ease;
+        }
+        .footer-bottom-link:hover {
+            color: #6fa8dc;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        @media (max-width: 767px) {
+            .footer-inner {
+                padding-top: 80px;
+                padding-bottom: 50px;
+            }
+            .footer-wrapper {
+                flex-direction: column;
+                grid-row-gap: 50px;
+            }
+            .footer-logo-block {
+                max-width: 100%;
+            }
+            .footer-content-block {
+                width: 100%;
+                flex-wrap: wrap;
+                grid-row-gap: 36px;
+            }
+            .footer-block {
+                min-width: 0;
+                flex: 1 1 calc(50% - 18px);
+            }
+            .footer-form-container {
+                flex-direction: column;
+                width: 100%;
+                padding: 12px;
+                gap: 10px;
+                box-sizing: border-box;
+            }
+            .footer-form-input {
+                width: 100%;
+                height: 48px;
+                margin-right: 0;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                padding: 0 14px;
+                background: rgba(255, 255, 255, 0.06);
+                box-sizing: border-box;
+            }
+            .footer-form-input:focus {
+                outline: none;
+                border: 1px solid #6fa8dc;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .footer-form-submit-button {
+                width: 100%;
+                height: 48px;
+                border-radius: 12px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+        @media (max-width: 479px) {
+            .footer-inner {
+                padding-top: 64px;
+                padding-bottom: 40px;
+            }
+            .footer-text {
+                font-size: 24px;
+            }
+            .footer-title {
+                font-size: 18px;
+            }
+            .footer-block {
+                flex: 1 1 100%;
+            }
+            .footer-form-container {
+                flex-direction: column;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.32);
+                border-radius: 16px;
+                padding: 14px;
+                gap: 12px;
+                align-items: stretch;
+                box-sizing: border-box;
+            }
+            .footer-form-input {
+                width: 100%;
+                height: 48px;
+                padding: 0 14px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.06);
+                margin-bottom: 0;
+                font-size: 16px;
+                color: #ffffff;
+                box-sizing: border-box;
+            }
+            .footer-form-input:focus {
+                outline: none;
+                border: 1px solid #6fa8dc;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            .footer-form-submit-button {
+                width: 100%;
+                height: 48px;
+                border-radius: 12px;
+                padding: 0 18px;
+                font-size: 14px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+
 
 </head>
 
@@ -540,7 +934,7 @@
 
                     <div class="join-our-movement-form-block w-form">
 
-                        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="join-our-movement-form-inner" data-wf-page-id="63d5ec95050b76518dad34fe" data-wf-element-id="c343757e-9984-e240-07a5-8185edb303d8"><input class="form-input-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Your Name" type="text" id="name" required="" /><input class="form-input-field w-input" maxlength="256" name="email" data-name="Email"
+                        <form id="email-form" name="email-form" data-name="Email Form" method="post" class="join-our-movement-form-inner" data-wf-page-id="63d5ec95050b76518dad34fe" data-wf-element-id="c343757e-9984-e240-07a5-8185edb303d8"><input class="form-input-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Your Name" type="text" id="name" required="" /><input class="form-input-field w-input" maxlength="256" name="email" data-name="Email"
 
                                 placeholder="Email Here" type="email" id="email" required="" /><input class="form-input-field w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="Phone number" type="tel" id="Phone" required="" /><input type="submit"
 
@@ -734,9 +1128,7 @@
 
                                     <div id="q1" class="accordion-hader">
 
-                                        <div class="content-block">
-
-                                            <h4 class="faq-title">Serving Higher  Cause</h4>
+                                        <div class="content-block"><h4 class="faq-title">Serving Higher  Cause</h4>
 
                                             <div class="line-shape"></div>
 
@@ -748,7 +1140,7 @@
 
                                     <div class="accordion-body-content">
 
-                                        <p class="accordion-text">Hon. Joan Alobo is committed to serving the people of Soroti City East with transparency, accountability, and unwavering dedication to improving lives across the constituency.</p>
+                                        <p class="accordion-text">Joan serves a cause greater than any individual or party — the wellbeing of every family in Soroti City East. She works across the aisle to strengthen maternal health, fund schools, and grow youth employment.</p>
 
                                     </div>
 
@@ -778,7 +1170,7 @@
 
                                     <div class="accordion-body-content">
 
-                                        <p class="accordion-text">Hon. Joan Alobo is committed to serving the people of Soroti City East with transparency, accountability, and unwavering dedication to improving lives across the constituency.</p>
+                                        <p class="accordion-text">From council halls to Parliament, Joan speaks plainly and stands by her record. Whether pushing for a new ward clinic or auditing a procurement decision, she never deflects and never evades accountability.</p>
 
                                     </div>
 
@@ -808,7 +1200,7 @@
 
                                     <div class="accordion-body-content">
 
-                                        <p class="accordion-text">Hon. Joan Alobo is committed to serving the people of Soroti City East with transparency, accountability, and unwavering dedication to improving lives across the constituency.</p>
+                                        <p class="accordion-text">Joan takes positions that aren't politically easy: defending women's land rights, supporting abuse survivors, and challenging misuse of public funds. She'd rather lose a vote than lose her integrity.</p>
 
                                     </div>
 
@@ -838,7 +1230,7 @@
 
                                     <div class="accordion-body-content">
 
-                                        <p class="accordion-text">Hon. Joan Alobo is committed to serving the people of Soroti City East with transparency, accountability, and unwavering dedication to improving lives across the constituency.</p>
+                                        <p class="accordion-text">Because Joan delivers. Bursaries awarded, schools renovated, and health centres upgraded — all verifiable, all on the public record. Voting continuity keeps this work moving; voting anyone else resets the clock on Soroti City East's progress.</p>
 
                                     </div>
 
@@ -868,7 +1260,7 @@
 
                                     <div class="accordion-body-content">
 
-                                        <p class="accordion-text">Hon. Joan Alobo is committed to serving the people of Soroti City East with transparency, accountability, and unwavering dedication to improving lives across the constituency.</p>
+                                        <p class="accordion-text">Every concern raised at our monthly citizen forums gets logged, tracked, and reported back publicly. Whether it's a stalled borehole, a delayed bursary, or a contested land case, no issue stays in a drawer.</p>
 
                                     </div>
 
@@ -1110,10 +1502,9 @@
                 <div class="campaign-donation-thumb"><img src="assets/63da24faff9f965b9ff6354c_campaign-donation-bg.jpg" loading="lazy" alt="Campaign Donation BG Image" class="campaign-donation-bg-image" />
                     <div class="campaign-donation-content">
                         <div class="campaign-donation-intro-text">SUPPORT OUR WORK</div>
-                        <h2 class="compaign-donation-title"><span class="underline">Donate</span> to support <span class="underline">development</span> in Soroti City East</h2>
                         <p class="compaign-donation-summary">Your contribution helps fund community projects, health outreach programs, tree planting initiatives, and women’s empowerment activities across the constituency.</p>
                         <div class="compaign-donation-form-block w-form">
-                            <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get" class="compaign-donation-form" data-wf-page-id="63d5ec95050b76518dad34fe" data-wf-element-id="f0400d6d-cfa0-bf35-0251-8c641f77868e">                        <div class="donation-tracker" data-goal="50000000" data-raised="12750000" data-donors="1247" data-days="46">
+                            <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="post" class="compaign-donation-form" data-wf-page-id="63d5ec95050b76518dad34fe" data-wf-element-id="f0400d6d-cfa0-bf35-0251-8c641f77868e">                        <div class="donation-tracker" data-goal="50000000" data-raised="12750000" data-donors="1247" data-days="46">
                             <div class="donation-tracker-header">
                                 <div class="donation-tracker-info">
                                     <span class="donation-tracker-label">Campaign Fundraising Goal</span>
@@ -1142,13 +1533,13 @@
                         </div>
                         
                         <div class="donation-quick-select" style="display:flex;gap:8px;margin-bottom:15px;flex-wrap:wrap;">
-                            <button type="button" class="donation-amount-pill" data-amount="20000" onclick="document.getElementById('Name-3').value='20000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 20,000</button>
-                            <button type="button" class="donation-amount-pill" data-amount="50000" onclick="document.getElementById('Name-3').value='50000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 50,000</button>
-                            <button type="button" class="donation-amount-pill" data-amount="100000" onclick="document.getElementById('Name-3').value='100000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 100,000</button>
-                            <button type="button" class="donation-amount-pill" data-amount="250000" onclick="document.getElementById('Name-3').value='250000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 250,000</button>
-                            <button type="button" class="donation-amount-pill" data-amount="500000" onclick="document.getElementById('Name-3').value='500000';this.parentElement.querySelectorAll('.donation-amount-pill').forEach(b=>b.classList.remove('active'));this.classList.add('active');">UGX 500,000</button>
+                            <button type="button" class="donation-amount-pill" data-amount="20000">UGX 20,000</button>
+                            <button type="button" class="donation-amount-pill" data-amount="50000">UGX 50,000</button>
+                            <button type="button" class="donation-amount-pill" data-amount="100000">UGX 100,000</button>
+                            <button type="button" class="donation-amount-pill" data-amount="250000">UGX 250,000</button>
+                            <button type="button" class="donation-amount-pill" data-amount="500000">UGX 500,000</button>
                         </div>
-                        <input class="form-input-field compaign-donation-field w-input" maxlength="256" name="Name" data-name="Name" placeholder="Or enter any amount (e.g. 50000)" type="text" id="Name-3" required="" /><input type="submit" data-wait="Please wait..."
+                        <input class="form-input-field compaign-donation-field w-input" maxlength="256" name="amount" data-name="Amount" placeholder="Or enter any amount (e.g. 50000)" type="text" id="amount" required="" /><input type="submit" data-wait="Please wait..."
                                     class="compaign-donation-button w-button" value="Donate now" /></form>
                             <div class="w-form-done">
                                 <div>Thank you! Your submission has been received!</div>
@@ -1534,63 +1925,6 @@
 
     </section>
 
-    <div class="newsletter-cta-section">
-
-        <div class="container w-container">
-
-            <div class="newsletter-cta-wrapper">
-
-                <div class="newsletter-cta-content">
-
-                    <div class="newsletter-cta-icon">
-
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-
-                    </div>
-
-                    <h2 class="newsletter-cta-title">Stay Informed, Stay Connected</h2>
-
-                    <p class="newsletter-cta-text">Get weekly updates on constituency projects, parliamentary work, and upcoming events delivered straight to your inbox. Join 5,000+ subscribers across Soroti City East.</p>
-
-                </div>
-
-                <div class="newsletter-cta-form-block w-form">
-
-                    <form id="newsletter-form" name="newsletter-form" data-name="Newsletter Form" method="post" class="newsletter-cta-form" action="https://formspree.io/f/PLACEHOLDER_FORM_ID">
-
-                        <div class="newsletter-input-group">
-
-                            <input class="newsletter-input w-input" maxlength="256" name="name" data-name="Name" placeholder="Your name" type="text" id="news-name" />
-
-                            <input class="newsletter-input w-input" maxlength="256" name="email" data-name="Email" placeholder="your@email.com" type="email" id="news-email" required="" />
-
-                            <input type="submit" data-wait="Subscribing..." class="newsletter-submit w-button" value="Subscribe Now" />
-
-                        </div>
-
-                        <div class="newsletter-disclaimer">No spam, ever. Unsubscribe anytime. We respect your privacy.</div>
-
-                    </form>
-
-                    <div class="w-form-done">
-
-                        <div class="newsletter-success">Thank you! Please check your inbox to confirm your subscription.</div>
-
-                    </div>
-
-                    <div class="w-form-fail">
-
-                        <div>Oops! Something went wrong. Please try again.</div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
 
     
 
@@ -1607,10 +1941,11 @@
                         <div class="footer-title left-title">NEWSLETTER</div>
 
                         <p class="footer-text">Get latest Updates directly in inbox</p>
+                        <p class="footer-tagline">Proudly serving the people of Soroti City East.</p>
 
                         <div class="footer-form w-form">
 
-                            <form id="wf-form-Hero-Form" name="wf-form-Hero-Form" data-name="Hero Form" method="get" class="footer-form-container" data-wf-page-id="63d5ec95050b76518dad34fe" data-wf-element-id="98695158-3343-24cb-d6d0-3c987e956111"><input class="footer-form-input w-input" maxlength="256" name="Hero-Email-2" data-name="Hero Email 2" aria-label="Enter your email" placeholder="Your email here" type="text" id="Hero-Email-2" required="" /><input type="submit"
+                            <form id="wf-form-Hero-Form" name="wf-form-Hero-Form" data-name="Hero Form" method="get" class="footer-form-container" data-wf-page-id="63d5ec95050b76518dad34fe" data-wf-element-id="98695158-3343-24cb-d6d0-3c987e956111"><label for="Hero-Email-2" class="sr-only">Email address for newsletter</label><input class="footer-form-input w-input" maxlength="256" name="Hero-Email-2" data-name="Hero Email 2" placeholder="Your email here" type="email" id="Hero-Email-2" required="" autocomplete="email" /><input type="submit"
 
                                     data-wait="Please wait..." class="footer-form-submit-button w-button" value="Subscribe" /></form>
 
@@ -1628,6 +1963,13 @@
 
                         </div>
 
+                        <div class="footer-social-icons" aria-label="Social media">
+                            <a href="#" class="footer-social-item" aria-label="Facebook"><img src="assets/63ec674093791c73abe6fb6b_facebook-2.svg" alt="" width="18" height="18" /></a>
+                            <a href="#" class="footer-social-item" aria-label="X / Twitter"><img src="assets/63ec6740cdcda6865ce4d04a_twitter-2.svg" alt="" width="18" height="18" /></a>
+                            <a href="#" class="footer-social-item" aria-label="Instagram"><img src="assets/63ec6740a92a9cdc3280b51a_instagram-2.svg" alt="" width="18" height="18" /></a>
+                            <a href="https://chat.whatsapp.com/INVITE_LINK_HERE" class="footer-social-item" aria-label="WhatsApp" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+                        </div>
+
                         <div class="footer-bottom-text">Powered by <a href="http://webflow.com/" target="_blank" class="bottom-link">Webflow</a></div>
 
                     </div>
@@ -1636,7 +1978,7 @@
 
                         <div class="footer-block">
 
-                            <div class="footer-title">Nevigation</div><a href="about.html" class="footer-link">About Us</a><a href="manifesto.html" class="footer-link">Manifesto</a><a href="issues.html" class="footer-link">Priorities</a><a href="blog.html" class="footer-link">Blog Post</a><a href="party-members.html"
+                            <div class="footer-title">Navigation</div><a href="about.html" class="footer-link">About Us</a><a href="manifesto.html" class="footer-link">Manifesto</a><a href="issues.html" class="footer-link">Priorities</a><a href="blog.html" class="footer-link">Blog Post</a><a href="party-members.html"
 
                                 class="footer-link">Party Members</a><a href="contact.html" class="footer-link">Contact us</a></div>
 
@@ -1697,6 +2039,8 @@
     <script src="ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 
     <script src="assets/js/webflow.0d826dc4d.js" type="text/javascript"></script>
+
+    <script src="assets/js/portal.js" type="text/javascript"></script>
 
     <!-- Mobile Bottom Tab Bar -->
 
@@ -2108,9 +2452,16 @@
 
             
 
-            var goal = parseInt(tracker.getAttribute('data-goal'));
+            var stats = window.AloboPortal ? window.AloboPortal.getCampaignStats() : {
+                goal: parseInt(tracker.getAttribute('data-goal')) || 50000000,
+                raised: parseInt(tracker.getAttribute('data-raised')) || 12750000,
+                donors: parseInt(tracker.getAttribute('data-donors')) || 1247,
+                days: 46
+            };
 
-            var raised = parseInt(tracker.getAttribute('data-raised'));
+            var goal = stats.goal;
+
+            var raised = stats.raised;
 
             var percent = Math.min(Math.round((raised / goal) * 100), 100);
 
@@ -2208,9 +2559,9 @@
 
             var daysEl = tracker.parentElement.querySelector('.donation-tracker-stat:nth-child(3) .donation-stat-amount');
 
-            var donors = parseInt(tracker.getAttribute('data-donors')) || 1247;
+            var donors = stats.donors;
 
-            var days = parseInt(tracker.getAttribute('data-days')) || 46;
+            var days = stats.days;
 
             if (donorEl) donorEl.textContent = donors.toLocaleString();
 
@@ -2293,6 +2644,22 @@
     </script>
 
 
+
+    <!-- Donation Pill Delegated Handler -->
+    <script>
+        (function() {
+            document.addEventListener('click', function(e) {
+                var pill = e.target.closest && e.target.closest('.donation-amount-pill');
+                if (!pill) return;
+                e.preventDefault();
+                var amountInput = document.getElementById('amount');
+                if (amountInput) amountInput.value = pill.getAttribute('data-amount') || '';
+                var siblings = pill.parentElement.querySelectorAll('.donation-amount-pill');
+                for (var i = 0; i < siblings.length; i++) siblings[i].classList.remove('active');
+                pill.classList.add('active');
+            });
+        })();
+    </script>
 
     <!-- Back to Top JS -->
 
