@@ -91,6 +91,9 @@ DEFAULT_PAGES = [
     'register.html',
     'tweets.html',
     'volunteer.html',
+    'projects.html',
+    'events.html',
+    'budget.html',
 ]
 
 # Safety bound — if the splice slice is larger than this, we assume
