@@ -674,7 +674,39 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                 box-sizing: border-box;
             }
         }
-    </style>
+    
+        /* Reduced breadcrumb hero height */
+        .breadcrumb-section {
+            min-height: 400px !important;
+        }
+        .breadcrumb-wrapper {
+            padding-top: 160px !important;
+            padding-bottom: 50px !important;
+        }
+        @media (max-width: 991px) {
+            .breadcrumb-section {
+                min-height: 300px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 120px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+        @media (max-width: 767px) {
+            .breadcrumb-section {
+                min-height: 260px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 110px !important;
+                padding-bottom: 30px !important;
+            }
+        }
+        @media (max-width: 479px) {
+            .breadcrumb-section {
+                min-height: 230px !important;
+            }
+        }
+</style>
 
 </head>
 

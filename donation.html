@@ -718,7 +718,39 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                 box-sizing: border-box;
             }
         }
-    </style>
+    
+        /* Reduced breadcrumb hero height */
+        .breadcrumb-section {
+            min-height: 400px !important;
+        }
+        .breadcrumb-wrapper {
+            padding-top: 160px !important;
+            padding-bottom: 50px !important;
+        }
+        @media (max-width: 991px) {
+            .breadcrumb-section {
+                min-height: 300px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 120px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+        @media (max-width: 767px) {
+            .breadcrumb-section {
+                min-height: 260px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 110px !important;
+                padding-bottom: 30px !important;
+            }
+        }
+        @media (max-width: 479px) {
+            .breadcrumb-section {
+                min-height: 230px !important;
+            }
+        }
+</style>
 
 </head>
 
@@ -1383,96 +1415,7 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                     var printWindow = window.open('', '_blank', 'width=600,height=500');
                     printWindow.document.write('<html><head><title>Print Receipt</title>');
                     printWindow.document.write('<style>body{font-family:monospace;padding:30px;} #receipt-box{border:1px solid #ccc;padding:20px;border-radius:8px;}</style>');
-                    printWindow.document.write('    
-    
-    <style>
-        /* Pages FAB Sub-menu */
-        .fab-pages-menu {
-            position: fixed;
-            bottom: 160px;
-            right: 20px;
-            z-index: 99999;
-            background: #fff;
-            border-radius: 16px;
-            padding: 8px 0;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-            transform: scale(0.85);
-            opacity: 0;
-            pointer-events: none;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-            transform-origin: bottom right;
-            min-width: 200px;
-        }
-        .fab-pages-menu.open {
-            transform: scale(1);
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .fab-pages-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 20px;
-            font-family: Urbanist, sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: #1a1a2e;
-            text-decoration: none;
-            transition: background 0.15s ease;
-        }
-        .fab-pages-item:hover {
-            background: #f0f4ff;
-        }
-        .fab-pages-item:first-child {
-            border-radius: 16px 16px 0 0;
-        }
-        .fab-pages-item:last-child {
-            border-radius: 0 0 16px 16px;
-        }
-        .fab-pages-backdrop {
-            position: fixed;
-            inset: 0;
-            z-index: 99998;
-            background: rgba(0, 0, 0, 0.35);
-            display: none;
-            transition: opacity 0.25s ease;
-        }
-        .fab-pages-backdrop.open {
-            display: block;
-        }
-        .mobile-fab-pages {
-            position: relative;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            background: #6fa8dc;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 16px rgba(111, 168, 220, 0.4);
-            transition: transform 0.2s ease;
-        }
-        .mobile-fab-pages:hover {
-            transform: scale(1.08);
-        }
-        .mobile-fab-pages:active {
-            transform: scale(0.95);
-        }
-        /* Position the Pages FAB above the WhatsApp FAB */
-        .fab-container .mobile-fab-pages {
-            order: 2;
-        }
-        .fab-container .mobile-fab-whatsapp {
-            order: 3;
-        }
-        .fab-container .back-to-top-btn {
-            order: 4;
-        }
-    </style>
-</head><body>');
+                    printWindow.document.write('</head><body>');
                     printWindow.document.write(receiptContent);
                     printWindow.document.write('<script>window.print(); setTimeout(window.close, 500);<\/script>');
                     printWindow.document.write('</body></html>');

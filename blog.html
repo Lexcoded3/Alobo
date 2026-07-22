@@ -673,7 +673,39 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                 box-sizing: border-box;
             }
         }
-    </style>
+    
+        /* Reduced breadcrumb hero height */
+        .breadcrumb-section {
+            min-height: 400px !important;
+        }
+        .breadcrumb-wrapper {
+            padding-top: 160px !important;
+            padding-bottom: 50px !important;
+        }
+        @media (max-width: 991px) {
+            .breadcrumb-section {
+                min-height: 300px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 120px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+        @media (max-width: 767px) {
+            .breadcrumb-section {
+                min-height: 260px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 110px !important;
+                padding-bottom: 30px !important;
+            }
+        }
+        @media (max-width: 479px) {
+            .breadcrumb-section {
+                min-height: 230px !important;
+            }
+        }
+</style>
 
 </head>
 
@@ -742,28 +774,17 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
         </div>
         
         <!-- ===== BLOG HERO ===== -->
-        <section class="blog-hero-section">
+        <div class="breadcrumb-section wf-section">
             <div class="container w-container">
-                <div class="blog-hero-wrapper">
-                    <h1 class="blog-hero-title">Blog & Insights</h1>
-                    <p class="blog-hero-subtitle">Articles, speeches, and reflections from Hon. Joan Alobo on the issues that matter most to the people of Soroti City East.</p>
-                    <div class="blog-hero-stats">
-                        <div class="blog-hero-stat">
-                            <span class="blog-hero-stat-num">35+</span>
-                            <span class="blog-hero-stat-label">Articles</span>
-                        </div>
-                        <div class="blog-hero-stat">
-                            <span class="blog-hero-stat-num">12</span>
-                            <span class="blog-hero-stat-label">Speeches</span>
-                        </div>
-                        <div class="blog-hero-stat">
-                            <span class="blog-hero-stat-num">8k+</span>
-                            <span class="blog-hero-stat-label">Readers</span>
-                        </div>
+                <div class="breadcrumb-wrapper">
+                    <h1 class="breadcrumb-title">Blog & Insights</h1>
+                    <div class="breadcrumb-link-block"><a href="index.html" class="breadcrumb-backlink">Home</a>
+                        <div class="breadcrunb-slach">/</div>
+                        <div class="current-page-name">Blog</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- ===== BLOG CONTENT ===== -->
         <div class="blog-content-section">
