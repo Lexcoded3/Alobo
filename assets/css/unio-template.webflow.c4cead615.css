@@ -570,7 +570,7 @@ button,
     -webkit-appearance: button
 }
 
-.w-form {
+.w-form, .wf-form-custom {
     margin: 0 0 15px
 }
 

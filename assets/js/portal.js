@@ -151,5 +151,48 @@
             };
         }
     };
+
+        // Form submission handler for wf-form-custom forms
+        // Replaces Webflow's built-in w-form handler that relied on data-wf-element-id
+        initFormHandlers: function() {
+            var self = this;
+            // Reset any stale success/fail states from browser back-forward cache
+            document.querySelectorAll('.wf-form-custom .w-form-done').forEach(function(el) {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.wf-form-custom form').forEach(function(el) {
+                el.style.display = '';
+            });
+            // Attach submit handlers to all wf-form-custom forms
+            document.querySelectorAll('.wf-form-custom form').forEach(function(form) {
+                // Skip forms with action attribute (external submissions like Formspree)
+                if (form.getAttribute('action')) return;
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var container = form.closest('.wf-form-custom');
+                    if (!container) return;
+                    var doneDiv = container.querySelector('.w-form-done');
+                    var failDiv = container.querySelector('.w-form-fail');
+                    // Basic email validation
+                    var emailInput = form.querySelector('input[type="email"]');
+                    if (emailInput && emailInput.value) {
+                        var emailRegex = /^\S+@\S+$/;
+                        if (!emailRegex.test(emailInput.value)) {
+                            if (failDiv) {
+                                failDiv.style.display = 'block';
+                            }
+                            return;
+                        }
+                    }
+                    // Show success, hide form
+                    if (doneDiv) {
+                        doneDiv.style.display = 'block';
+                        form.style.display = 'none';
+                    }
+                });
+            });
+        }
+    };
     window.AloboPortal.init();
+    window.AloboPortal.initFormHandlers();
 })();
