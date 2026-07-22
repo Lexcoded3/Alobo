@@ -900,7 +900,7 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                                                 <button type="button" class="donation-amount-pill" data-amount="20000" style="padding:10px 18px; border-radius:20px; font-weight:700; cursor:pointer; border:1px solid #e0e4ea; background:#f8f9fb; color:#333; transition:all 0.2s ease;">UGX 20,000</button>
                                             </div>
                                             <div class="donation-simgle-amount-box custom-amount-box">
-                                                <input type="number" class="form-input-field donation-form w-input" name="custom-amount" placeholder="Or enter custom amount" id="custom-amount" style="margin-bottom:0;" />
+                                                <input type="number" class="form-input-field donation-form w-input" name="custom-amount" placeholder="Or enter custom amount" id="custom-amount" style="margin-bottom:0;" / autocomplete="transaction-amount">
                                             </div>
                                         </div>
                                         <div style="display:flex; justify-content:flex-end; margin-top:20px;">
@@ -913,22 +913,22 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                                         <div class="donation-details-text" style="font-weight:700; margin-bottom:15px;">Donor Information</div>
                                         <div class="regular-donation-block-wrapper" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
                                             <div>
-                                                <input type="text" class="form-input-field donation-form w-input" name="First-Name" placeholder="First Name" id="First-Name" required style="margin-bottom:0;" />
+                                                <input type="text" class="form-input-field donation-form w-input" name="First-Name" placeholder="First Name" id="First-Name" required style="margin-bottom:0;" / autocomplete="given-name">
                                             </div>
                                             <div>
-                                                <input type="text" class="form-input-field donation-form w-input" name="Last-Name" placeholder="Last Name" id="Last-Name" required style="margin-bottom:0;" />
+                                                <input type="text" class="form-input-field donation-form w-input" name="Last-Name" placeholder="Last Name" id="Last-Name" required style="margin-bottom:0;" / autocomplete="family-name">
                                             </div>
                                             <div style="grid-column: span 2;">
-                                                <input type="email" class="form-input-field donation-form w-input" name="Email" placeholder="Email Address" id="Email" required style="margin-bottom:0;" />
+                                                <input type="email" class="form-input-field donation-form w-input" name="Email" placeholder="Email Address" id="Email" required style="margin-bottom:0;" / autocomplete="email">
                                             </div>
                                             <div style="grid-column: span 2;">
-                                                <input type="tel" class="form-input-field donation-form w-input" name="Phone" placeholder="Phone Number" id="Phone" required style="margin-bottom:0;" />
+                                                <input type="tel" class="form-input-field donation-form w-input" name="Phone" placeholder="Phone Number" id="Phone" required style="margin-bottom:0;" / autocomplete="tel">
                                             </div>
                                             <div style="grid-column: span 2;">
-                                                <textarea placeholder="Address / Location" id="Address" name="Address" class="form-textarea party-member-text-area donation w-input" style="min-height:80px; margin-bottom:0;"></textarea>
+                                                <textarea placeholder="Address / Location" id="Address" name="Address" class="form-textarea party-member-text-area donation w-input" style="min-height:80px; margin-bottom:0;" autocomplete="street-address"></textarea>
                                             </div>
                                             <div style="grid-column: span 2;">
-                                                <textarea placeholder="Additional Note (Optional)" id="Additional-Note" name="Additional-Note" class="form-textarea party-member-text-area donation w-input" style="min-height:80px; margin-bottom:0;"></textarea>
+                                                <textarea placeholder="Additional Note (Optional)" id="Additional-Note" name="Additional-Note" class="form-textarea party-member-text-area donation w-input" style="min-height:80px; margin-bottom:0;" autocomplete="off"></textarea>
                                             </div>
                                         </div>
                                         <div style="display:flex; justify-content:space-between; margin-top:20px;">
@@ -960,7 +960,7 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                                         <!-- Dynamic Fields: Mobile Money -->
                                         <div id="fields-mobile-money" style="display:block; margin-bottom:20px;">
                                             <label style="font-size:13px; font-weight:700; color:#1a1a2e; margin-bottom:8px; display:block;">Enter Mobile Money Number</label>
-                                            <input type="tel" class="form-input-field donation-form w-input" id="mm-number" placeholder="e.g. 0770000000" style="margin-bottom:0;" />
+                                            <input type="tel" class="form-input-field donation-form w-input" id="mm-number" placeholder="e.g. 0770000000" style="margin-bottom:0;" / autocomplete="off">
                                             <p style="font-size:12px; color:#666; margin-top:6px;">A push notification will be sent to this number to approve the mock transaction.</p>
                                         </div>
 
@@ -968,16 +968,16 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                                         <div id="fields-card" style="display:none; margin-bottom:20px; flex-direction:column; gap:12px;">
                                             <div>
                                                 <label style="font-size:13px; font-weight:700; color:#1a1a2e; margin-bottom:6px; display:block;">Card Number</label>
-                                                <input type="text" class="form-input-field donation-form w-input" id="card-number" placeholder="4111 2222 3333 4444" style="margin-bottom:0;" />
+                                                <input type="text" class="form-input-field donation-form w-input" id="card-number" placeholder="4111 2222 3333 4444" style="margin-bottom:0;" / autocomplete="cc-number">
                                             </div>
                                             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
                                                 <div>
                                                     <label style="font-size:13px; font-weight:700; color:#1a1a2e; margin-bottom:6px; display:block;">Expiry Date</label>
-                                                    <input type="text" class="form-input-field donation-form w-input" id="card-expiry" placeholder="MM/YY" style="margin-bottom:0;" />
+                                                    <input type="text" class="form-input-field donation-form w-input" id="card-expiry" placeholder="MM/YY" style="margin-bottom:0;" / autocomplete="cc-exp">
                                                 </div>
                                                 <div>
                                                     <label style="font-size:13px; font-weight:700; color:#1a1a2e; margin-bottom:6px; display:block;">CVC</label>
-                                                    <input type="password" class="form-input-field donation-form w-input" id="card-cvc" placeholder="123" maxlength="4" style="margin-bottom:0;" />
+                                                    <input type="password" class="form-input-field donation-form w-input" id="card-cvc" placeholder="123" maxlength="4" style="margin-bottom:0;" / autocomplete="cc-csc">
                                                 </div>
                                             </div>
                                         </div>

@@ -883,7 +883,7 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                                 <div id="request-success-toast" style="display:none;background:#dcfce7;border:1px solid #86efac;color:#166534;padding:12px;border-radius:8px;font-size:14px;font-weight:600;margin-bottom:6px;">Request submitted successfully! Tracking ID generated.</div>
                                 
                                 <label style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:-6px;">Request Type</label>
-                                <select class="form-input-field contact-form-field w-input" id="req-type" required style="color:#666; background-color:#f8f9fb; border:1px solid #e0e4ea; margin-bottom:0;">
+                                <select class="form-input-field contact-form-field w-input" id="req-type" required style="color:#666; background-color:#f8f9fb; border:1px solid #e0e4ea; margin-bottom:0;" autocomplete="off">
                                     <option value="" disabled selected>Select service area...</option>
                                     <option value="Borehole Repair">Clean Water & Borehole Repair</option>
                                     <option value="School Bursary">Education & Bursary Support</option>
@@ -895,10 +895,10 @@ FOOTER RESTYLE — 6 directions: dark overlay on bg image, top accent line, acce
                                 </select>
 
                                 <label style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:-6px;">Contact Phone</label>
-                                <input type="tel" class="form-input-field contact-form-field w-input" id="req-phone" placeholder="e.g. +256 700 000000" required style="margin-bottom:0;" />
+                                <input type="tel" class="form-input-field contact-form-field w-input" id="req-phone" placeholder="e.g. +256 700 000000" required style="margin-bottom:0;" / autocomplete="tel">
 
                                 <label style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:-6px;">Detailed Description</label>
-                                <textarea class="form-textarea party-member-text-area donation w-input" id="req-description" placeholder="Please describe the request or community concern in detail..." required style="min-height:110px;margin-bottom:0;"></textarea>
+                                <textarea class="form-textarea party-member-text-area donation w-input" id="req-description" placeholder="Please describe the request or community concern in detail..." required style="min-height:110px;margin-bottom:0;" autocomplete="off"></textarea>
 
                                 <input type="submit" value="Submit Request" class="button-primary anotther-button w-button" style="width:100%;margin-top:6px;" />
                             </form>
