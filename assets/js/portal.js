@@ -149,13 +149,11 @@
                 donors: newDonors,
                 days: stats.days
             };
-        }
-    };
+        },
 
         // Form submission handler for wf-form-custom forms
         // Replaces Webflow's built-in w-form handler that relied on data-wf-element-id
         initFormHandlers: function() {
-            var self = this;
             // Reset any stale success/fail states from browser back-forward cache
             document.querySelectorAll('.wf-form-custom .w-form-done').forEach(function(el) {
                 el.style.display = 'none';
@@ -193,6 +191,7 @@
             });
         }
     };
+
     window.AloboPortal.init();
     window.AloboPortal.initFormHandlers();
 })();
