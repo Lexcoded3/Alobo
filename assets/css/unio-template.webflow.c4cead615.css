@@ -2675,14 +2675,14 @@ blockquote {
     position: relative;
     overflow: hidden;
     background-color: #16327a;
-    background-image: url("../slider-bg1.jpg");
+    background-image: url("../slider-bg1.webp");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .slider-section.slider-two {
-    background-image: url("../slider-bg1.jpg");
+    background-image: url("../slider-bg1.webp");
     background-position: 50% 50%;
     background-size: cover;
 }
