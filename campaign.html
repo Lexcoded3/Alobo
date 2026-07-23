@@ -395,7 +395,43 @@
         .breadcrumb-section {
             background-image: url('assets/hero.webp') !important;
         }
-    </style>
+    
+        /* Reduced breadcrumb hero height */
+        .breadcrumb-section {
+            min-height: 400px !important;
+        }
+        .breadcrumb-wrapper {
+            padding-top: 180px !important;
+            padding-bottom: 60px !important;
+        }
+        @media (max-width: 991px) {
+            .breadcrumb-section {
+                min-height: 320px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 140px !important;
+                padding-bottom: 50px !important;
+            }
+        }
+        @media (max-width: 767px) {
+            .breadcrumb-section {
+                min-height: 310px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 155px !important;
+                padding-bottom: 45px !important;
+            }
+        }
+        @media (max-width: 479px) {
+            .breadcrumb-section {
+                min-height: 280px !important;
+            }
+            .breadcrumb-wrapper {
+                padding-top: 140px !important;
+                padding-bottom: 40px !important;
+            }
+        }
+</style>
 
 </head>
 
